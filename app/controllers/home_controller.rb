@@ -14,12 +14,5 @@ class HomeController < ApplicationController
     # get latest 5 orders
     @orders   = ShopifyAPI::Order.find(:all, :params => {:limit => 5, :order => "created_at DESC" })
   end
-  def upload
-  file_field = @params['form']['file'] rescue nil
-  # file_field is a StringIO object
-  file_field.content_type # 'text/csv'
-  file_field.full_original_filename
-  ...
-end
-  
+
 end
