@@ -15,9 +15,9 @@ class HomeController < ApplicationController
     @orders   = ShopifyAPI::Order.find(:all, :params => {:limit => 5, :order => "created_at DESC" })
   end
   def upload
-  uploaded_io = params[:datafile]
+  uploaded_io = params[:datafile.original_filename]
   puts YAML::dump(uploaded_io)
-  File.open(Rails.root.join('public', 'bin', uploaded_io.original_filename), 'wb') do |file|
+  File.open(Rails.root.join('public', 'bin', uploaded_io), 'wb') do |file|
   file.write(uploaded_io.read)
   end
   end
