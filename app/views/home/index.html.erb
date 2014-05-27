@@ -87,7 +87,7 @@
             <div id="<%= product.id %>" class="accordion-body collapse <% if index == 1 %>in<% end %>">
               <div class="accordion-inner">
                 	<h1>File Upload</h1>
-<%= form_for(:product, :url => {:action => 'upload', :id => @product.id}, :html => {:multipart => true}) do |f| %>
+<%= form_for(:product, :url => {:action => 'upload', :id => product.id}, :html => {:multipart => true}) do |f| %>
 <%= f.file_field(:product_image) %>
 <%= submit_tag('Upload') %>
 <% end %>
