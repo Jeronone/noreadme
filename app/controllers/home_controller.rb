@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   end
   def upload
   uploaded_io = params[:datafile]
-  puts YAML::dump(uploaded_io.upload.original_filename)
+  puts YAML::dump(uploaded_io)
   File.open(Rails.root.join('public', 'bin', uploaded_io.original_filename), 'wb') do |file|
   file.write(uploaded_io.read)
   end
