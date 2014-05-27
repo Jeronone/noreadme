@@ -1,7 +1,6 @@
 Vesriontest::Application.routes.draw do
   get 'welcome' => 'home#welcome'
   get 'design' => 'home#design'
-  get 'upload' => 'home#upload'
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
