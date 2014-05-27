@@ -131,10 +131,10 @@
       
     </div> <!-- accordion -->
 	<h1>File Upload</h1>
-<%= form_tag :action => 'create' ,:multiple => true%>
-<p><label for="upload_file">Select File</label> : 
-<%= file_field 'upload', 'datafile' %></p>
-<%= submit_tag "Upload" %>
+<%= form_tag("upload", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
 <% end %>
   </div> <!-- span8 / right-column -->
 </div>
