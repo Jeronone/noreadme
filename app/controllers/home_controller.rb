@@ -16,7 +16,8 @@ class HomeController < ApplicationController
   end
   def upload
   uploaded_io = params[:datafile]
- 
+  File.open(Rails.root.join('public', uploaded_io.original_filename), 'wb') do |file|
+  file.write(uploaded_io.read)
   end
   
 end
