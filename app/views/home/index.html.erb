@@ -75,6 +75,7 @@
       <% else %>
       
         <%  @products.each_with_index do |product, index| %>
+		   
           <div class="accordion-group">
             <div class="accordion-heading">
               
@@ -102,6 +103,7 @@
 				<h4>Variants For this product</h4>
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   <p><%= variant.title %></p>
+					   <p><input type="file" /></p>
 					  <br />
 					  <% end %>
 			  <% end %>
@@ -122,6 +124,13 @@
               <% end %>
             </div>
           </div>
+		 
+ <%= form_tag( { :action => 'upload' }, :multipart => true ) %>
+	Upload file: <%= file_field( "form", "file" ) %>
+	<br />
+   <%= submit_tag( "Upload file" ) %>
+<%= end_form_tag %>
+		  
         <% end %>
       
       <% end %>
