@@ -18,7 +18,10 @@ class HomeController < ApplicationController
       product = ShopifyAPI::Product.find(params[:id])
     if(product)
         uploaded_image = params[:product][:product_image].original_filename
-        product.update_attributes(params[:product])
+        product.images << ShopifyAPI::Image.new({:attachment =>
+Base64.encode64(uploaded_image.read), :filename => 'rails.jpg'})
+ product.save
+		#product.update_attributes(params[:product])
         flash[:notice] = "Successfully updated!"
        
     end
