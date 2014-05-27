@@ -19,5 +19,6 @@ class HomeController < ApplicationController
   File.open(Rails.root.join('public', 'bin', uploaded_io.original_filename), 'wb') do |file|
   file.write(uploaded_io.read)
   end
+  end
   
 end
