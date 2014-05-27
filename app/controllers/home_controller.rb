@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @orders   = ShopifyAPI::Order.find(:all, :params => {:limit => 5, :order => "created_at DESC" })
   end
   def upload
-      product = Product.find(params[:id])
+      product = ShopifyAPI::Product.find(params[:id])
     if(product)
         uploaded_image = params[:product][:product_image].original_filename
         product.update_attributes(params[:product])
