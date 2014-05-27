@@ -86,7 +86,13 @@
         
             <div id="<%= product.id %>" class="accordion-body collapse <% if index == 1 %>in<% end %>">
               <div class="accordion-inner">
-                
+                	<h1>File Upload</h1>
+<%= form_tag({:action => :upload, :id => @product.id}, :multipart => true) do %>
+<p><label for="upload_file">Select File</label> : 
+<%= file_field 'upload', 'datafile' %></p>
+<%= image_tag 'Untitled2.png' %>
+<%= submit_tag "Upload" %>
+<% end %>
                 <% if !product.images.empty? %>
 				<h4>Current Images for this product</h4>
 				<% product.images.each_with_index do | img, index1| %>
@@ -130,12 +136,6 @@
       <% end %>
       
     </div> <!-- accordion -->
-	<h1>File Upload</h1>
-<%= form_tag({:action => :upload}, :multipart => true) do %>
-<p><label for="upload_file">Select File</label> : 
-<%= file_field 'upload', 'datafile' %></p>
-<%= image_tag 'Untitled2.png' %>
-<%= submit_tag "Upload" %>
-<% end %>
+
   </div> <!-- span8 / right-column -->
 </div>
