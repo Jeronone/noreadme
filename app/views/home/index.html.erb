@@ -60,7 +60,7 @@
 
   <div class="span8 offset1"> 
     <h2>New Products</h2>
-    <%= @products.inspect %>
+    
 	<br />
     <div class="accordion" id="accordion">      
       
@@ -92,12 +92,9 @@
                   </div>
                 <% end %>
                 
-                <p><strong>Type:</strong> <%= product.product_type %></p>
-                <p><strong>Vendor:</strong> <%= product.vendor %></p>
-                <p><%= raw(product.body_html) %></p><br/>
-                <% if product.published_at != nil %>
-                <p class="muted">Published at <%= Time.parse(product.published_at).strftime("%H:%M on %m/%d/%Y") %></p>
-                <% end %>
+              <% if !product.variants.empty? %>
+			  <%= product.variants.inspect %>
+			  <% end %>
                 <p><%= link_to raw('View in your Shopify Admin <i class="icon-chevron-right" style="opacity:.25"></i>'), "https://#{shop_session.url}/admin/products/#{product.id}", :target => 'blank', :class => 'btn btn-primary' %></p>
               </div>
               
