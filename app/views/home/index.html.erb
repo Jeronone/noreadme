@@ -124,7 +124,11 @@
               <% end %>
             </div>
           </div>
-
+<%= form_tag( { :action => '' }, :multipart => true ) %>
+  Upload file: <%= file_field( "form", "file" ) %>
+  <br />
+  <%= submit_tag( "Upload file" ) %>
+<%= end_form_tag %>
         <% end %>
       
       <% end %>
