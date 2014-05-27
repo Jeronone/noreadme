@@ -93,7 +93,9 @@
                 <% end %>
                 
               <% if !product.variants.empty? %>
-			  <%= product.variants.inspect %>
+					  <%  product.variants.each_with_index do |variant, index2| %>
+					  <%= variant.id %>
+					  <% end %>
 			  <% end %>
                 <p><%= link_to raw('View in your Shopify Admin <i class="icon-chevron-right" style="opacity:.25"></i>'), "https://#{shop_session.url}/admin/products/#{product.id}", :target => 'blank', :class => 'btn btn-primary' %></p>
               </div>
