@@ -9,6 +9,8 @@ Vesriontest::Application.routes.draw do
     delete 'logout' => :destroy
   end
   root :to => 'home#index'
+  
+  post "/upload" => 'home#upload'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
