@@ -16,6 +16,10 @@ class HomeController < ApplicationController
   end
   def upload
       product = ShopifyAPI::Product.find(params[:id])
+	  variantid=params[:vid]
+	  varianttitle=params[:vtitle]
+	  puts YAML::dump(vid)
+	  puts YAML::dump(vtitle)
     if(product)
         uploaded_image = params[:product][:product_image]
         product.images << ShopifyAPI::Image.new({:attachment =>
