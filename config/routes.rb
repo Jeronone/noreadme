@@ -11,6 +11,11 @@ Vesriontest::Application.routes.draw do
   root :to => 'home#index'
   
   post "/upload" => 'home#upload'
+  
+  resources :home, :only => [ :show ] do
+  member do
+    post :upload
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
