@@ -10,7 +10,7 @@ Vesriontest::Application.routes.draw do
   end
   root :to => 'home#index'
   
-  post "/upload" => 'home#upload'
+  post "upload" => 'home#upload'
   
   resources :home, :only => [ :show ] do
   member do
