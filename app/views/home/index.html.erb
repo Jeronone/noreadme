@@ -89,7 +89,7 @@
                 <% if !product.images.empty? %>
 				<h4>Current Images for this product</h4>
 				<% product.images.each_with_index do | img, index1| %>
-					<%= link_to image_tag(img), '#modal-'+product.id.to_s, :'data-toggle' => 'modal' %>
+					<%= link_to image_tag(img.medium), '#modal-'+product.id.to_s, :'data-toggle' => 'modal' %>
 				<% end %>
                   <div class="polaroid">
                     <%= link_to image_tag(product.images.first.medium), '#modal-'+product.id.to_s, :'data-toggle' => 'modal' %>
