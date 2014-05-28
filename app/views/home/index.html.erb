@@ -101,6 +101,7 @@
                 <% end %>
                 
               <% if !product.variants.empty? %>
+			  <div class='variants-section'>
 				<h4>Variants For this product</h4>
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   <p><%= variant.title %></p>
@@ -108,8 +109,9 @@
 <%= f.file_field(:product_image) %>
 <%= submit_tag('Upload') %>
 <% end %>
-					  <br />
+					  
 					  <% end %>
+					  </div><!-- variants-section-->
 			  <% end %>
                 <p><%= link_to raw('View in your Shopify Admin <i class="icon-chevron-right" style="opacity:.25"></i>'), "https://#{shop_session.url}/admin/products/#{product.id}", :target => 'blank', :class => 'btn btn-primary' %></p>
               </div>
