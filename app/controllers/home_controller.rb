@@ -16,8 +16,15 @@ class HomeController < ApplicationController
   end
   def upload
       product = ShopifyAPI::Product.find(params[:id])
-	  variantid=params[:vid]
-	  varianttitle=params[:vtitle]
+	   variantid=params[:vid]
+	   varianttitle=params[:vtitle]
+	  # code to check if the image already exist or not
+	  # if yes then delete the existing one 
+	  images=product.images
+	  images.each do |img|
+	  end
+ 
+	 
 	  puts YAML::dump(variantid)
 	  puts YAML::dump(varianttitle)
     if(product)
