@@ -109,7 +109,7 @@ h1,h2,h3,h4,h5,h6,.brand {
 
 h1,h2 { letter-spacing:-1px;}
 
-.polaroid { float:right; display:block; padding: 20px; margin: 0 0 50px 50px; border: 1px solid #ccc; border: 1px solid #fff; background: #f5f5f5;
+.polaroid { float:right; display:block; padding: 20px; margin: 0 0 15px 20px; border: 1px solid #ccc; border: 1px solid #fff; background: #f5f5f5;
   @include gradient(#f5f5f5,#f0f0f0);
   @include box-shadow(0,1px,5px,.5);
   @include rounded(4px);
