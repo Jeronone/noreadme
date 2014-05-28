@@ -86,10 +86,7 @@
         
             <div id="<%= product.id %>" class="accordion-body collapse <% if index == 1 %>in<% end %>">
               <div class="accordion-inner">
-<%= form_for(:product, :url => {:action => 'upload', :id => product.id}, :html => {:multipart => true}) do |f| %>
-<%= f.file_field(:product_image) %>
-<%= submit_tag('Upload') %>
-<% end %>
+
                 <% if !product.images.empty? %>
 				<h4>Current Images for this product</h4>
 				<% product.images.each_with_index do | img, index1| %>
