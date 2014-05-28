@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 	  # if yes then delete the existing one 
 	 
 	  @arr = @product.images.select do |img|
-  end.map { |img| img.src }.join(", ")	
+  end.map { |img| img }.join(", ")	
 	 
 	  puts YAML::dump(variantid)
 	  puts YAML::dump(varianttitle)
