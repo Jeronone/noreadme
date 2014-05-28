@@ -15,20 +15,20 @@ class HomeController < ApplicationController
     #@orders   = ShopifyAPI::Order.find(:all, :params => {:limit => 5, :order => "created_at DESC" })
   end
   def upload
-      product = ShopifyAPI::Product.find(params[:id])
+      @product = ShopifyAPI::Product.find(params[:id])
 	   variantid=params[:vid]
 	   varianttitle=params[:vtitle]
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
 	 
-	  arr = product.images.select do |img|
+	  arr = @product.images.select do |img|
   end.map { |img| img.title }.join(", ")	
 	 
 	  puts YAML::dump(variantid)
 	  puts YAML::dump(varianttitle)
-    if(product)
+    if(@product)
         uploaded_image = params[:product][:product_image]
-        product.images << ShopifyAPI::Image.new({:attachment =>
+        @product.images << ShopifyAPI::Image.new({:attachment =>
 Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png"})
  product.save
 		#product.update_attributes(params[:product])
