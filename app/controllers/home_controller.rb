@@ -21,8 +21,7 @@ class HomeController < ApplicationController
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
 	 
-	  @arr = @product.images.select do |img|
-  end.map { |img| img }.join(", ")	
+	  @arr = @product.images.
 	 
 	  puts YAML::dump(variantid)
 	  puts YAML::dump(varianttitle)
