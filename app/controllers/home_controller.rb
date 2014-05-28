@@ -20,10 +20,9 @@ class HomeController < ApplicationController
 	   varianttitle=params[:vtitle]
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
-	  images=product.images
-	  images.each do |img|
-	  end
- 
+	 
+	  arr = product.images.select do |img|
+  end.map { |img| img.title }.join(", ")	
 	 
 	  puts YAML::dump(variantid)
 	  puts YAML::dump(varianttitle)
