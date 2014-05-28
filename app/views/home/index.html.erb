@@ -101,7 +101,7 @@
                 <% end %>
                 
               <% if !product.variants.empty? %>
-			  <div class='variants-section'>
+			  <div class='variants-section' style='clear:both'>
 				<h4>Variants For this product</h4>
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   <p><%= variant.title %></p>
