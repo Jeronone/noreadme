@@ -114,10 +114,10 @@
 					<h4>Swatch Image for this variant</h4>
 					<%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %>
-					
+					</div><!-- variants-section-->
 					  
 					  <% end %>
-					  </div><!-- variants-section-->
+					  
 			  <% end %>
                 <p><%= link_to raw('View in your Shopify Admin <i class="icon-chevron-right" style="opacity:.25"></i>'), "https://#{shop_session.url}/admin/products/#{product.id}", :target => 'blank', :class => 'btn btn-primary' %></p>
               </div>
