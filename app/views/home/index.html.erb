@@ -136,10 +136,11 @@
     </div> <!-- accordion -->
 
 
+<%= form_tag('upload', :method => :post) do  %>
+  <%= cl_image_upload_tag(:image_id) %>
+    ...
+<% end %>
 
 
-	<%= form_for(:url => {:action => ''}, :html => {:multipart => true}) do |f| %>
-  
-    <% end %>
-  </div> <!-- span8 / right-column -->
+	</div> <!-- span8 / right-column -->
 </div>
