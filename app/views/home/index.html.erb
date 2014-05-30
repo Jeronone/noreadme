@@ -140,6 +140,8 @@
   <%= cl_image_upload_tag("ruchi-testing-name") %>
     ...
 <% end %>
+  <%= cl_image_upload_tag(:image_id, :public_id=>"ruchi_test123.png",:crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %>
 <div class='preview'></div>
 <div class='progress_bar'></div>
 
