@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: jeronone-technologies
+  api_key: '224985859219662'
+  api_secret: mW2uhBdIzuPwuLdpeRfvvU3a0a8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: jeronone-technologies
+  api_key: '224985859219662'
+  api_secret: mW2uhBdIzuPwuLdpeRfvvU3a0a8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: jeronone-technologies
+  api_key: '224985859219662'
+  api_secret: mW2uhBdIzuPwuLdpeRfvvU3a0a8
+  enhance_image_tag: true
+  static_image_support: false
