@@ -103,7 +103,7 @@
 				<h4>Variants For this product</h4>
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   <p><%= variant.title %></p>
-					<%= cl_image_upload_tag(:image_id, :public_id=>"#{variant.title}-#{variant.id}",:overwrite=>true,:crop => :limit, :width => 1000, :height => 1000, 
+					<%= cl_image_upload_tag(:image_id, :public_id=>"#{variant.title}-#{variant.id}",:overwrite=>false,:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %>
 					  
 					  <% end %>
