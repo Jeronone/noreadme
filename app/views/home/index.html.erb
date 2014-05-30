@@ -103,16 +103,17 @@
 				<h4>Variants For this product</h4>
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   <p><%= variant.title %></p>
+					   <h4>Variant Image for this product</h4>
+					<%= form_for(:product, :url => {:action => 'upload', :id => product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
+<%= f.file_field(:product_image) %>
+<%= submit_tag('Upload') %>
+<% end %>	  
 				</div>
 				<div class='swatch-section' style='clear:both'>
 					<h4>Swatch Image for this variant</h4>
 					<%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %>
-					<h4>Variant Image for this product</h4>
-					<%= form_for(:product, :url => {:action => 'upload', :id => product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
-<%= f.file_field(:product_image) %>
-<%= submit_tag('Upload') %>
-<% end %>	  
+					
 					  
 					  <% end %>
 					  </div><!-- variants-section-->
