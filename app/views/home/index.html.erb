@@ -103,10 +103,8 @@
 				<h4>Variants For this product</h4>
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   <p><%= variant.title %></p>
-					<%= form_for(:product, :url => {:action => 'upload', :id => product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
-<%= f.file_field(:product_image) %>
-<%= submit_tag('Upload') %>
-<% end %>
+					<%= cl_image_upload_tag(:image_id, :public_id=>variant.title+"-"+variant.id,:crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %>
 					  
 					  <% end %>
 					  </div><!-- variants-section-->
