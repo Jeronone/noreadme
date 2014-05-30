@@ -63,5 +63,4 @@ gem "less-rails-bootstrap"
 end
 
 gem 'rails_12factor', group: :production
-gem 'aws-sdk'
-gem 'paperclip'
+gem 'cloudinary'
