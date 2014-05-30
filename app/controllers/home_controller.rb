@@ -30,7 +30,7 @@ class HomeController < ApplicationController
     if(@product)
         uploaded_image = params[:product][:product_image]
         @product.images << ShopifyAPI::Image.new({:attachment =>
-Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png",:metafield =>{:key => "alt",:value=>varianttitle,:value_type=>"string",:namespace => "tags"}})
+Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
  @product.save
 		#product.update_attributes(params[:product])
         flash[:notice] = "Successfully updated!"
