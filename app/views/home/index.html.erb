@@ -134,13 +134,13 @@
       <% end %>
       
     </div> <!-- accordion -->
-<%= cl_form_tag CALLBACK_URL_HERE,
-  form: { class: 'cloudinary' },
-  format: 'jpg',
-  transformation: { size: '300x300', crop: 'fit' } do %>
 
-  <%= file_field_tag :file %>
-  <%= submit_tag "Upload" %>
-<% end %>
+
+<%= form_tag(:url => {:action => 'upload'}, :method => :post) do  %>
+  <%= cl_image_upload_tag(:image_id, :crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %>
+   <%= end %>
+
+
   </div> <!-- span8 / right-column -->
 </div>
