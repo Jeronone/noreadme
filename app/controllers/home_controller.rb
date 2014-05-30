@@ -16,10 +16,10 @@ class HomeController < ApplicationController
   end
   def upload
   if @params[:image_id].present?
-     preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
+     #preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
      # Verify signature by calling preloaded.valid?
-     @model.image_id = preloaded.identifier
-	  flash[:notice] = "Successfully updated!"
+     #@model.image_id = preloaded.identifier
+	  #flash[:notice] = "Successfully updated!"
   end
   
       #@product = ShopifyAPI::Product.find(params[:id])
