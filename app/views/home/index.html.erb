@@ -155,4 +155,7 @@ $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
   $('.image_public_id').val(data.result.public_id);    
   return true;
 });
+$('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) { 
+  $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
+})
 </script>
