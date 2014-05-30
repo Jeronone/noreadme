@@ -133,10 +133,13 @@
       <% end %>
       
     </div> <!-- accordion -->
-<%= form_for(:post) do |f| %>
-<%= f.hidden_field(:picture_cache)%>
-<%= f.file_field(:picture) %>
-<%= submit_tag('Upload') %>
+<%= cl_form_tag CALLBACK_URL_HERE,
+  form: { class: 'cloudinary' },
+  format: 'jpg',
+  transformation: { size: '300x300', crop: 'fit' } do %>
+
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload" %>
 <% end %>
   </div> <!-- span8 / right-column -->
 </div>
