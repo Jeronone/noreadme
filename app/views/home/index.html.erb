@@ -104,7 +104,7 @@
 					  <%  product.variants.each_with_index do |variant, index2| %>
 					   
 					   <div class='variants-section' style='float:left;clear:left'>
-					   <p><%= variant.title %></p>
+					   <h3><%= variant.title %></h3>
 					   <h4>Variant Image for this product</h4>
 					<%= form_for(:product, :url => {:action => 'upload', :id => product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
 <%= f.file_field(:product_image) %>
