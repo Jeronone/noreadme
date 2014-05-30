@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 	   uploaded_image = params[:product][:product_image]
 	  a = ShopifyAPI::Image.new
       a.prefix_options = {:product_id => params[:id]}
-      a.metafields = [{:key => 'alt', :value => 'Cake', :value_type => "string", :namespace =>  "tags"}]
+      a.metafields = [{:key => 'alt', :value => varianttitle, :value_type => "string", :namespace =>  "tags"}]
       a.attachment = Base64.encode64(uploaded_image.read)
       a.filename = varianttitle+"-"+variantid+".png"
       a.save
