@@ -36,7 +36,7 @@ class HomeController < ApplicationController
       #a.filename = varianttitle+"-"+variantid+".png"
       #a.save
     if(@product1)
-        uploaded_image = params[:@product][:product_image]
+        uploaded_image = params[:product][:product_image]
         @product1.images << ShopifyAPI::Image.new({:attachment =>
 Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
  @product1.save
