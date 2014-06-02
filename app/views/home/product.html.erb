@@ -98,6 +98,7 @@
 				<th>Option2</th>
 				<th>Option3</th>
 				<th>Current Image</th>
+				<th>Upload Image</th>
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
@@ -114,6 +115,12 @@
 				<% end %>
                   
                 <% end %></td>
+				<td>
+				<%= form_for(:@product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
+				<%= f.file_field(:@product_image) %>
+				<%= submit_tag('Upload') %>
+				<% end %>
+				</td>
 				</tr>
 				<% end %>
 				</tbody>
@@ -122,10 +129,7 @@
 					  <%  @product.variants.each_with_index do |variant, index2| %>
 					  				  
 					   <h4>Variant Image for this @product</h4>
-					<%= form_for(:@product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
-<%= f.file_field(:@product_image) %>
-<%= submit_tag('Upload') %>
-<% end %>	  
+					
 				<div class='swatch-section' style='float:right'>
 					<h4>Swatch Image for this variant</h4>
 					<%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
