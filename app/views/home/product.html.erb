@@ -97,8 +97,8 @@
 				</td>
 				<td>
 				
-<img src="http://res.cloudinary.com/jeronone-technologies/image/upload/elitify/"#{variant.title}"-"#{variant.id}>
-<%= cl_image_tag("elitify/#{variant.title}-#{variant.id}", :crop => :fill, :width => 120, :height => 80) %>
+
+<%= cl_image_tag("#{variant.title}-#{variant.id}", :crop => :fill, :width => 120, :height => 80) %>
 				</td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %></td>
