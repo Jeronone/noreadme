@@ -70,7 +70,9 @@
 						<% @testvar = img.small %>
 					 
 					<% end %>
+					<% if @!testvar.empty?%>
 				<%= link_to image_tag(@testvar), '#modal-'+@product.id.to_s, :'data-toggle' => 'modal' %>
+				  <% end %>
 				<% end %>
                   
                 <% end %></td>
