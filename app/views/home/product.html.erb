@@ -87,8 +87,7 @@
             <div id="<%= @product.id %>" class="accordion-body collapse">
               <div class="accordion-inner">
 
-               <%= @metafields.inspect %>
-                
+                           
               <% if !@product.variants.empty? %>
 			  
 				<h3>Variants For this product</h3>
@@ -98,6 +97,7 @@
 				<th>Option1</th>
 				<th>Option2</th>
 				<th>Option3</th>
+				<th>Current Image</th>
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
@@ -106,6 +106,12 @@
 				<td><%= variant.option1 %></td>
 				<td><%= variant.option2 %></td>
 				<td><%= variant.option3 %></td>
+				<td>  <% if !@product.images.empty? %>
+				<% @product.images.each_with_index do | img, index1| %>
+					<%= img.inspect %>
+				<% end %>
+                  
+                <% end %></td>
 				</tr>
 				<% end %>
 				</tbody>
