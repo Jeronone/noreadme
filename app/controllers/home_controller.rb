@@ -54,6 +54,7 @@ class HomeController < ApplicationController
     end
 	unless session[:product_id].blank?
       @product = ShopifyAPI::Product.find(session[:product_id])
+	  @metafields=ShopifyAPI::Metafield.find(:first,:params=>{:resource => "product_image", :resource_id => session[:product_id], :key => "alt"})
 	end
   end
   
