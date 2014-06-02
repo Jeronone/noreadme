@@ -60,9 +60,9 @@ Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".
   
 	def destroy
 	@product=ShopifyAPI::Product.find(params[:id])
-	@img=params[:imgid]
-	@pid=params[:id]
-	image = ShopifyAPI::Image.find(915636973, :params => {:product_id => 273463821})
+	img=params[:imgid]
+	pid=params[:id]
+	image = ShopifyAPI::Image.find(params[:imgid], :params => {:product_id => 273463821})
 	#image=ShopifyAPI::Image.find(1, :params => {:product_id => @pid})
 	#image = ShopifyAPI::Image.find(params[:imgid], params[:id])
 	image.destroy
