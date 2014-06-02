@@ -69,9 +69,9 @@ Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".
 	end
 	
 	def destroyC
-	vid=params[:vid]
-	vtitle=params[:vtitle]
-	vid.concat(vtitle.to_s)
+	@vid=params[:vid]
+	@vtitle=params[:vtitle]
+	@vid.concat(@vtitle.to_s)
 	Cloudinary::Uploader.destroy("green-642230057", :invalidate => true)
 	end
   
