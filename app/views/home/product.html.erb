@@ -1,0 +1,172 @@
+<%= cloudinary_js_config %>
+<header class="jumbotron">
+  <div class="inner">
+    <div class="container">
+      <h1 style="letter-spacing:-3px; margin-bottom:20px;">Elitify Test App</h1>
+      <p class="lead">An <strong>intro</strong> to using the Shopify App Template<br/>
+      including information on the <strong>Shopify API</strong> and <strong>Bootstrap,</strong><br/>
+      just to get the ball rolling.</p>
+    </div><!-- /container -->
+  </div>
+</header>
+
+<div class="row">
+  <div class="span3">
+    <div class="well">  
+      <h3>Check out the <code>home_controller</code></h3>
+      <hr style="margin:2px 0 7px"/>
+      <p>The controller in this demo application fetches the newest 5 orders and products and makes them available as instance variables <code>@orders</code> and <code>@products</code></p>
+    
+      <br/>
+    
+      <h3>Take a look at <code>index.html.erb</code></h3>
+      <hr style="margin:2px 0 7px"/>
+      <p>Index is the Ruby template you are currently viewing. Have a look at the markup and Ruby code to see how the Shopify API is being used. It's located at <code>views/home/index.html.erb</code></p>
+    </div>
+    
+    <h3>Additional Docs</h3>
+    <p>You can become an expert pretty quickly by reading up on these docs:</p>
+    
+    <ul>
+      <li>
+        <%= link_to 'API documentation', 'http://www.shopify.com/developers/api/' %>
+        <span class="note">Learn what you can do with the Shopify API</span>
+      </li><br/>
+      <li>
+        <%= link_to 'Bootstrap documentation', 'http://twitter.github.com/bootstrap/' %>
+        <span class="note">Find out what you can do with Twitter Bootstrap</span>
+      </li><br/>
+      <li>
+        <%= link_to 'Wiki', 'http://wiki.shopify.com/' %>
+        <span class="note">Get more information and share your knowledge</span>
+      </li><br/>
+      <li>
+        <%= link_to 'Forum', 'http://forums.shopify.com/community' %>
+        <span class="note">Ask questions and see what others already wanted to know</span>
+      </li>
+    </ul>
+  
+    <hr/>
+  
+    <h3>Once you're ready</h3>
+  
+    <p>We'd love to see what you create using the Shopify API. You can keep up to date on the latest and greatest via the <%= link_to 'Shopify API Twitter Account', 'http://www.twitter.com/shopifyapi' %>. You can also read the latest information on the <%= link_to 'API Publishing Page', 'http://www.shopify.com/developers/publishing/' %>.</p>
+    
+    <br/>
+    
+    <a href="https://twitter.com/shopifyapi" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @shopifyapi</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div> <!-- span3 / left-column -->
+
+
+  <div class="span8 offset1"> 
+    <h2>New Products</h2>
+    
+	<br />
+    <div class="accordion" id="accordion">      
+      
+      <% if @product.blank? %>
+      
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <em>There are no products in your store.</em>
+          </div>
+        </div>
+      
+      <% else %>
+      
+       
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<%= product.id %>">
+                <%= @@product.title %> <span class="pull-right muted"><%= @product.price_range %> <%= shop_session.shop.currency %></span>
+              </a>
+            </div>
+        
+            <div id="<%= @product.id %>" class="accordion-body collapse <% if index == 1 %>in<% end %>">
+              <div class="accordion-inner">
+
+                <% if !@product.images.empty? %>
+				<h4>Current Images for this @product</h4>
+				<% @product.images.each_with_index do | img, index1| %>
+					<div class="polaroid">
+					<%= link_to image_tag(img.small), '#modal-'+@product.id.to_s, :'data-toggle' => 'modal' %>
+					 </div>
+				<% end %>
+                  
+                <% end %>
+                
+              <% if !@product.variants.empty? %>
+			  
+				<h4>Variants For this @product</h4>
+					  <%  @product.variants.each_with_index do |variant, index2| %>
+					    <h3 style="clear:both"><%= variant.title %></h3>
+					   <div class='variants-section' style='float:left;clear:left'>
+					  
+					   <h4>Variant Image for this @product</h4>
+					<%= form_for(:@product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
+<%= f.file_field(:@product_image) %>
+<%= submit_tag('Upload') %>
+<% end %>	  
+				</div>
+				<div class='swatch-section' style='float:right'>
+					<h4>Swatch Image for this variant</h4>
+					<%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %>
+					</div><!-- variants-section-->
+					  
+					  <% end %>
+					  
+			  <% end %>
+                <p style="clear:both"><%= link_to raw('View in your Shopify Admin <i class="icon-chevron-right" style="opacity:.25"></i>'), "https://#{shop_session.url}/admin/@products/#{@product.id}", :target => 'blank', :class => 'btn btn-primary' %></p>
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="modal hide fade" id="modal-<%= @product.id %>" style="display:none;">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h3><%= @product.title %></h3>
+            </div>
+            <div class="modal-body" >
+              <% if !@product.images.empty? %>
+                <%= image_tag @product.images.first.large %>
+              <% end %>
+            </div>
+          </div>
+
+        <% end %>
+      
+      
+      
+    </div> <!-- accordion -->
+
+
+<%= form_tag('upload', :method => :post) do  %>
+  <%= cl_image_upload_tag("ruchi-testing-name") %>
+    ...
+<% end %>
+  <%= cl_image_upload_tag(:image_id, :public_id=>"ruchi_test123",:crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %>
+<div class='preview'></div>
+<div class='progress_bar'></div>
+
+
+	</div> <!-- span8 / right-column -->
+</div>
+<script type="text/javascript">
+$('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {  
+  $('.preview').html(
+    $.cloudinary.image(data.result.public_id, 
+      { format: data.result.format, version: data.result.version, 
+        crop: 'fill', width: 150, height: 100 })
+  );    
+  $('.image_public_id').val(data.result.public_id);    
+  return true;
+});
+$('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) { 
+  $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
+})
+</script>
