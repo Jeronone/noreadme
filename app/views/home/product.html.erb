@@ -110,6 +110,15 @@
 				<% end %>
 				</tbody>
 				</table>
+				 <% if !product.images.empty? %>
+				<h4>Current Images for this product</h4>
+				<% product.images.each_with_index do | img, index1| %>
+					<div class="polaroid">
+					<%= link_to image_tag(img.small), '#modal-'+product.id.to_s, :'data-toggle' => 'modal' %>
+					 </div>
+				<% end %>
+                  
+                <% end %>
 					  <%  @product.variants.each_with_index do |variant, index2| %>
 					  				  
 					   <h4>Variant Image for this @product</h4>
