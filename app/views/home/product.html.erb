@@ -94,7 +94,7 @@
 				<h3>Variants For this product</h3>
 				
 					  <%  @product.variants.each_with_index do |variant, index2| %>
-					  <%= variant.option %>
+					  <%= variant.inspect %>
 					    <h3 style="clear:both"><%= variant.title %></h3>
 					   <div class='variants-section' style='float:left;clear:left'>
 					  
