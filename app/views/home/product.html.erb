@@ -109,6 +109,9 @@
 				<td>  <% if !@product.images.empty? %>
 				<% @product.images.each_with_index do | img, index1| %>
 					<%= img.small %>
+					<% if img.small.include?(@variant.title) %>
+					<%= img.small %>
+					<% end %>
 				<% end %>
                   
                 <% end %></td>
