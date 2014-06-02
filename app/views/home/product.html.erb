@@ -94,10 +94,9 @@
 				<h3>Variants For this product</h3>
 				
 					  <%  @product.variants.each_with_index do |variant, index2| %>
-					  <%= variant.inspect %>
-					  <%= variant.option1 %>
-					  <%= variant.option2 %>
-					  <%= variant.option3 %>
+					  <%= variant.option1 %><br />
+					  <%= variant.option2 %><br />
+					  <%= variant.option3 %><br />
 					    <h3 style="clear:both"><%= variant.title %></h3>
 					   <div class='variants-section' style='float:left;clear:left'>
 					  
