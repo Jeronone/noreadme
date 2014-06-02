@@ -45,5 +45,16 @@ class HomeController < ApplicationController
        
     end
 	  end
+	  
+	  def product
+	@token= "#{shop_session.url}"
+	@token=  @token.gsub("www","")
+	 unless params[:id].blank?
+      session[:product_id] = params[:id]
+    end
+	unless session[:product_id].blank?
+      @product = ShopifyAPI::Product.find(session[:product_id])
+	end
+  end
   
 end
