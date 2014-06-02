@@ -82,7 +82,7 @@
 				
 				  
 				</td>
-				<td>Delete<a href="/delete?id="+@product.id+"&imgid="+@imgid>Delete</a></td>
+				<td>Delete<a href="/delete?id="+@product.id+"&imgid="+@imgid+"">Delete</a></td>
 				<% @imgid=nil %>
 				<td>
 				<%= form_for(:product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
