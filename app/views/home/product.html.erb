@@ -68,9 +68,8 @@
 				<% @product.images.each_with_index do | img, index1| %>
 					<% if img.small.include?(variant.title) %>
 						<% @testvar = img.small %>
-					 
-					<% end %>
-					<% if @!testvar.empty?%>
+					 <% end %>
+					<% if !@testvar.empty? %>
 				<%= link_to image_tag(@testvar), '#modal-'+@product.id.to_s, :'data-toggle' => 'modal' %>
 				  <% end %>
 				<% end %>
