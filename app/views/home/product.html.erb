@@ -97,8 +97,10 @@
 				<th>Option1</th>
 				<th>Option2</th>
 				<th>Option3</th>
-				<th>Current Image</th>
-				<th>Upload Image</th>
+				<th>Current Variant Image</th>
+				<th>Upload Variant Image</th>
+				<th>Current Swatch Image</th>
+				<th>Upload Swatch Image</th>
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
@@ -121,43 +123,23 @@
 				<%= submit_tag('Upload') %>
 				<% end %>
 				</td>
+				<td></td>
+				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
+                          :html => {:class => "image_upload"}) %></td>
 				</tr>
 				<% end %>
 				</tbody>
 				</table>
 				
-					  <%  @product.variants.each_with_index do |variant, index2| %>
-					  				  
-					   <h4>Variant Image for this @product</h4>
-					
-				<div class='swatch-section' style='float:right'>
-					<h4>Swatch Image for this variant</h4>
-					<%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
-                          :html => {:class => "image_upload"}) %>
-					</div><!-- variants-section-->
-					  
-					  <% end %>
+					 
 					  
 			  <% end %>
-                <p style="clear:both"><%= link_to raw('View in your Shopify Admin <i class="icon-chevron-right" style="opacity:.25"></i>'), "https://#{shop_session.url}/admin/@products/#{@product.id}", :target => 'blank', :class => 'btn btn-primary' %></p>
               </div>
               
             </div>
           </div>
           
-          <div class="modal hide fade" id="modal-<%= @product.id %>" style="display:none;">
-            <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
-              <h3><%= @product.title %></h3>
-            </div>
-            <div class="modal-body" >
-              <% if !@product.images.empty? %>
-                <%= image_tag @product.images.first.large %>
-              <% end %>
-            </div>
-          </div>
-
-        <% end %>
+          <% end %>
       
       
       
