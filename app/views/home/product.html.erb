@@ -79,8 +79,8 @@
           <div class="accordion-group">
             <div class="accordion-heading">
               
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<%= product.id %>">
-                <%= @@product.title %> <span class="pull-right muted"><%= @product.price_range %> <%= shop_session.shop.currency %></span>
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#<%= @product.id %>">
+                <%= @product.title %> <span class="pull-right muted"><%= @product.price_range %> <%= shop_session.shop.currency %></span>
               </a>
             </div>
         
