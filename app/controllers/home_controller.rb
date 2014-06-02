@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   def upload
   
   
-      @product = ShopifyAPI::Product.find(params[:id])
+      @product1 = ShopifyAPI::Product.find(params[:id])
 	   variantid=params[:vid]
 	   varianttitle=params[:vtitle]
 	  # code to check if the image already exist or not
@@ -35,11 +35,11 @@ class HomeController < ApplicationController
       #a.attachment = Base64.encode64(uploaded_image.read)
       #a.filename = varianttitle+"-"+variantid+".png"
       #a.save
-    if(@product)
-        uploaded_image = params[:product][:product_image]
-        @product.images << ShopifyAPI::Image.new({:attachment =>
+    if(@product1)
+        uploaded_image = params[:@product][:product_image]
+        @product1.images << ShopifyAPI::Image.new({:attachment =>
 Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
- @product.save
+ @product1.save
 		#product.update_attributes(params[:product])
         flash[:notice] = "Successfully updated!"
        
