@@ -92,7 +92,22 @@
               <% if !@product.variants.empty? %>
 			  
 				<h3>Variants For this product</h3>
-				
+				<table>
+				<thead>
+				<th>Index</th>
+				<th>Option1</th>
+				<th>Option2</th>
+				<th>Option3</th>
+				</thead>
+				<tbody>
+				<%  @product.variants.each_with_index do |variant, index2| %>
+				<td><%= index %></td>
+				<td><%= variant.option1 %></td>
+				<td><%= variant.option2 %></td>
+				<td><%= variant.option3 %></td>
+				<% end %>
+				</tbody>
+				</table>
 					  <%  @product.variants.each_with_index do |variant, index2| %>
 					  <%= variant.option1 %><br />
 					  <%= variant.option2 %><br />
