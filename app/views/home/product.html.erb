@@ -101,10 +101,12 @@
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
+				<tr>
 				<td><%= index2 %></td>
 				<td><%= variant.option1 %></td>
 				<td><%= variant.option2 %></td>
 				<td><%= variant.option3 %></td>
+				</tr>
 				<% end %>
 				</tbody>
 				</table>
