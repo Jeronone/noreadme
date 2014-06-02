@@ -91,8 +91,10 @@
                 
               <% if !@product.variants.empty? %>
 			  
-				<h4>Variants For this @product</h4>
+				<h3>Variants For this product</h3>
+				
 					  <%  @product.variants.each_with_index do |variant, index2| %>
+					  <%= variant.option %>
 					    <h3 style="clear:both"><%= variant.title %></h3>
 					   <div class='variants-section' style='float:left;clear:left'>
 					  
