@@ -56,6 +56,7 @@
 				<th>Delete</th>
 				<th>Upload Variant Image</th>
 				<th>Current Swatch Image</th>
+				<th>Delete</th>
 				<th>Upload Swatch Image</th>
 				</thead>
 				<tbody>
@@ -101,6 +102,9 @@
 				</td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %></td>
+			    <td>
+				<%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title) %>
+				</td>
 				</tr>
 				<% end %>
 				</tbody>
