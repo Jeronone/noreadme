@@ -27,19 +27,19 @@ class HomeController < ApplicationController
 	 
 	 # puts YAML::dump(variantid)
 	 # puts YAML::dump(varianttitle)
-	  if(@product)
-	   uploaded_image = params[:product][:product_image]
-	  a = ShopifyAPI::Image.new
-      a.prefix_options = {:product_id => params[:id]}
-      a.metafields = [{:key => 'alt', :value => varianttitle, :value_type => "string", :namespace =>  "tags"}]
-      a.attachment = Base64.encode64(uploaded_image.read)
-      a.filename = varianttitle+"-"+variantid+".png"
-      a.save
-    #if(@product)
-        #uploaded_image = params[:product][:product_image]
-        #@product.images << ShopifyAPI::Image.new({:attachment =>
-#Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
- #@product.save
+	  #if(@product)
+	   #uploaded_image = params[:product][:product_image]
+	  #a = ShopifyAPI::Image.new
+      #a.prefix_options = {:product_id => params[:id]}
+      #a.metafields = [{:key => 'alt', :value => varianttitle, :value_type => "string", :namespace =>  "tags"}]
+      #a.attachment = Base64.encode64(uploaded_image.read)
+      #a.filename = varianttitle+"-"+variantid+".png"
+      #a.save
+    if(@product)
+        uploaded_image = params[:product][:product_image]
+        @product.images << ShopifyAPI::Image.new({:attachment =>
+Base64.encode64(uploaded_image.read), :filename => varianttitle+"-"+variantid+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
+ @product.save
 		#product.update_attributes(params[:product])
         flash[:notice] = "Successfully updated!"
        
