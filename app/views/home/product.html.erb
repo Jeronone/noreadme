@@ -83,7 +83,7 @@
 				  
 				</td>
 				<td>
-				<%= link_to "Clickme", url_for(:controller => "home", :action => "destroy", :id => @product.id, :imgid => @imgid) %>
+				<%= link_to "Delete", url_for(:controller => "home", :action => "destroy", :id => @product.id, :imgid => @imgid) %>
 				<% @imgid=nil %>
 				<td>
 				<%= form_for(:product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
