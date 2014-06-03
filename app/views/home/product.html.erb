@@ -150,7 +150,8 @@ $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
 $('img').error(function(){
 var id=$(this).attr('id');
 var res = id.replace("image", "delete");
-$(res).remove();
+console.log(res);
+$("#"+res).remove();
 $(this).remove();
 })
 </script>
