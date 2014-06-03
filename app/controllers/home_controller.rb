@@ -35,6 +35,7 @@ class HomeController < ApplicationController
       #a.attachment = Base64.encode64(uploaded_image.read)
       #a.filename = varianttitle+"-"+variantid+".png"
       #a.save
+	  respond_to do |format|
     if(@product1)
         uploaded_image = params[:product][:product_image]
         @product1.images << ShopifyAPI::Image.new({:attachment =>
@@ -45,6 +46,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
         flash[:notice] = "Successfully updated!"
        
     end
+	end
 	  end
 	  
 	  def product
