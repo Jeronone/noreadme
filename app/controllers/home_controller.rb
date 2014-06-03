@@ -57,7 +57,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
     end
 	unless session[:product_id].blank?
       @product = ShopifyAPI::Product.find(session[:product_id])
-	  @metafields=ShopifyAPI::Metafield.find(:first,:params=>{:resource => "products", :resource_id => session[:product_id], :key => "alt"})
+	  @metafields=ShopifyAPI::Metafield.find(:first,:params=>{:resource => "products", :resource_id => session[:product_id], :key => "jt_swatch_show"})
 	end
   end
   
