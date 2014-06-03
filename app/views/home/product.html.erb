@@ -97,7 +97,7 @@
 				<% end %>
 				</td>
 				<td>
-				<%= cl_image_tag("#{variant.id}",:width => 120, :height => 80,:alt =>'test', :onError=>img.remove()) %>
+				<%= cl_image_tag("#{variant.id}",:width => 120, :height => 80,:alt =>'test', :onerror=>img.remove()) %>
 				</td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %></td>
