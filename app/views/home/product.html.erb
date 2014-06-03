@@ -13,9 +13,11 @@
 <div class="row">
   
 
-<%= form_for(:product, :url => {:action => 'check', :id => @product.id}) do |f| %>
-	<div class="field">
-    <%= f.check_box :show_img %> <br />
+<%= form_for(@product) do |f| %>	<div class="field">
+    <div class="field">
+        <%= f.label "Get Text" %> <br />
+        <%= f.check_box :send_text, {}, true, false %> <br />
+    </div>
 </div>
 	<% end %>
   <div class="span12"> 
