@@ -70,7 +70,7 @@
 				<% @product.images.each_with_index do | img, index1| %>
 				<%= img.small %>
 				<%= variant.title %>
-					<% if img.small.include?(variant.title) %>
+					<% if img.small.include?(variant.id) %>
 						<% @testvar = img.small %>
 						<% @imgid= img.id %>
 					 <% end %>
