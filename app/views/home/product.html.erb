@@ -56,8 +56,8 @@
 				<th>Delete</th>
 				<th>Upload Variant Image</th>
 				<th>Current Swatch Image</th>
-				<th>Delete</th>
 				<th>Upload Swatch Image</th>
+				<th>Delete</th>
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
@@ -150,7 +150,6 @@ $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
 $('img').error(function(){
 var id=$(this).attr('id');
 var res = id.replace("image", "delete");
-console.log(res);
 $("#"+res).remove();
 $(this).remove();
 })
