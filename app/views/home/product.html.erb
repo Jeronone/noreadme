@@ -13,7 +13,7 @@
 <div class="row">
   
 
-<%= form_for(:product, :url => {:action => 'check', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}) do |f| %>
+<%= form_for(:product, :url => {:action => 'check', :id => @product.id}) do |f| %>
 	<div class="field">
     <%= f.check_box :send_email %> <br />
 </div>
