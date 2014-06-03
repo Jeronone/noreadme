@@ -5,6 +5,7 @@ Vesriontest::Application.routes.draw do
   get 'product' =>'home#product'
   get 'delete' =>'home#destroy'
   get 'delete2' => 'home#destroyC'
+  get 'check' => 'home#check'
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

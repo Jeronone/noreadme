@@ -88,5 +88,13 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	end
 
 	end
+	
+	def check
+	respond_to do |format|
+		@pid=params[:product_id]
+		@check=params[:check]
+		
+	end
+	end
   
 end
