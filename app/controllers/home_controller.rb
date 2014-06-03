@@ -102,6 +102,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 :value_type => 'string'
 }))
 	else
+	@product = ShopifyAPI::Product.find(params[:product_id])
 	@meta= @product.add_metafield(ShopifyAPI::Metafield.new({
 :description => 'show variant images on click',
 :namespace => 'jt_swatch',
