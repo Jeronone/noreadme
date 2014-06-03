@@ -102,7 +102,7 @@
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %></td>
 			    <td>
-				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: "delete-"#{variant.id} %>
+				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: variant.id %>
 				</td>
 				</tr>
 				<% end %>
