@@ -97,12 +97,12 @@
 				<% end %>
 				</td>
 				<td>
-				<%= cl_image_tag("#{variant.id}",:width => 120, :height => 80, :onerror=>'this.remove()') %>
+				<%= cl_image_tag("#{variant.id}",:width => 120, :height => 80, :onerror=>'this.remove();#delete-#{variant.id}.remove()') %>
 				</td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
                           :html => {:class => "image_upload"}) %></td>
 			    <td>
-				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: variant.id %>
+				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: "delete-"#{variant.id} %>
 				</td>
 				</tr>
 				<% end %>
@@ -140,5 +140,11 @@ $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
 });
 $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) { 
   $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
+})
+</script>
+<script type="text/javascript">
+$(img).onerror(function(){
+$()
+$(this).remove();
 })
 </script>
