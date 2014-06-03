@@ -15,7 +15,7 @@
 
 <%= form_for(:product, :url => {:action => 'check', :id => @product.id}) do |f| %>
 	<div class="field">
-    <%= f.check_box  %> <br />
+    <%= f.check_box :show_img %> <br />
 </div>
 	<% end %>
   <div class="span12"> 
