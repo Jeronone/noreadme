@@ -14,6 +14,7 @@
   <div class="span12"> 
   <%= form_tag("/check",method: "get") do %> 
    <div class="field">
+       <%= hidden_field_tag(:product_id, @product.id) %>
        <%= check_box_tag(:pet_dog) %>
     </div>
 	<% end %>
