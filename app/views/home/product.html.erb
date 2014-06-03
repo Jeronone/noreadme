@@ -13,10 +13,9 @@
 <div class="row">
   
 
-<%= form_for() do |f| %>	<div class="field">
-    <div class="field">
-        <%= f.label "Get Text" %> <br />
-        <%= f.check_box :send_text, {}, true, false %> <br />
+<%= form_tag(method: "get") do %> 
+   <div class="field">
+       <%= check_box_tag(:pet_dog) %>
     </div>
 </div>
 	<% end %>
