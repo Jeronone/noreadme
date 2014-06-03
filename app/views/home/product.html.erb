@@ -99,7 +99,7 @@
 				<td>
 				<% @del= "delete-#{variant.id}"%>
 				<% @img= "image-#{variant.id}"%>
-				<%= cl_image_tag("#{variant.id}",:width => 120, :height => 80, :id => @img,:onerror=>'this.remove()') %>
+				<%= cl_image_tag("#{variant.id}",:width => 120, :height => 80, :id => @img) %>
 				</td>
 				
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
@@ -144,5 +144,10 @@ $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
 });
 $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) { 
   $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
+})
+</script>
+<script type="text/javascript">
+$(img).error(function(){
+$(this).remove();
 })
 </script>
