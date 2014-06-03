@@ -92,6 +92,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	def check
 	@pid=params[:product_id]
 	@check=params[:check]
+	respond_to do |format|
 	if @check
 	@product = ShopifyAPI::Product.find(params[:product_id])
 	  @meta= @product.add_metafield(ShopifyAPI::Metafield.new({
@@ -110,6 +111,8 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 :value => 'false',
 :value_type => 'string'
 }))
+	end
+	format.html { redirect_to :action => 'product', :id => params[:product_id] }
 	end
 	end
   
