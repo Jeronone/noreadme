@@ -11,15 +11,12 @@
 </header>
 
 <div class="row">
-  
-
-<%= form_tag(method: "get") do %> 
+  <div class="span12"> 
+  <%= form_tag("/check",method: "get") do %> 
    <div class="field">
        <%= check_box_tag(:pet_dog) %>
     </div>
-</div>
 	<% end %>
-  <div class="span12"> 
     <h2>New Products</h2>
 	
     <div class="accordion" id="accordion">      
