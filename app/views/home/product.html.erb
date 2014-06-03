@@ -13,11 +13,14 @@
 <div class="row">
   
 
-
+<%= form_for(:product, :url => {:action => 'check', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}) do |f| %>
+	<div class="field">
+    <%= f.check_box :send_email %> <br />
+</div>
+	<% end %>
   <div class="span12"> 
     <h2>New Products</h2>
-    
-	<br />
+	
     <div class="accordion" id="accordion">      
       
       <% if @product.blank? %>
