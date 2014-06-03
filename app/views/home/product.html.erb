@@ -98,7 +98,11 @@
 				</td>
 				<td>
 				
-
+			<% if FileTest.exist?("http://res.cloudinary.com/jeronone-technologies/image/upload/#{variant.id}")%>
+			exists
+			<% else %>
+			no
+			<% end %>
 <%= cl_image_tag("#{variant.id}",:width => 120, :height => 80,:alt =>'test') %>
 				</td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
