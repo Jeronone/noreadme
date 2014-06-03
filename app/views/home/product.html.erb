@@ -16,7 +16,7 @@
   <%= form_tag("/check",method: "get") do %> 
    <div class="field">
        <%= hidden_field_tag(:product_id, @product.id) %>
-       <%= check_box_tag(:check) %>
+       <%= check_box_tag(:check,:checked = true) %>
 	    <%= submit_tag("Save") %>
     </div>
 	<% end %>
