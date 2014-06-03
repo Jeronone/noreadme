@@ -62,6 +62,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
   end
   
 	def destroy
+	 respond_to do |format|
 	@product=ShopifyAPI::Product.find(params[:id])
 	img=params[:imgid]
 	pid=params[:id]
@@ -69,6 +70,9 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	#image=ShopifyAPI::Image.find(1, :params => {:product_id => @pid})
 	#image = ShopifyAPI::Image.find(params[:imgid], params[:id])
 	image.destroy
+	format.html { redirect_to :action => 'product', :id => @product.id }
+
+	end
 	end
 	
 	def destroyC
