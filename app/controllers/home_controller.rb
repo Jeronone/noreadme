@@ -119,7 +119,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	def color
 	   @selectedColor=params[:car][:color]
 	   @selectedColor.gsub(/#/, "")
-	   @select= "http://placehold.it/50x50/#{@selectedColor}/ffffff&text=+"
+	   @select= "http://placehold.it/50x50/#{@select}/ffffff&text=+"
 	   @p=params[:product_id]
 	   @product = ShopifyAPI::Product.find(params[:product_id])
 	   Cloudinary::Uploader.upload(@select)
