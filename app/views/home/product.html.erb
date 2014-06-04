@@ -121,7 +121,7 @@
 				</td>
 				<td>
 				   <%= form_tag("/color",method: "get") do %>
-					<%= hidden_field_tag(:product_id, @product.id) %>
+					<%= hidden_field_tag(:vid, variant.id) %>
 					<%= color_field("car","color") %>
 					<%= submit_tag("Save") %>
 				   <% end %>
