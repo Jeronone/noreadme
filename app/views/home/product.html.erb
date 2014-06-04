@@ -29,6 +29,8 @@
 	    <%= label_tag 'check', 'Show additional variant images' %>
 	   <%= check_box_tag('check', value = "1") %>
 	   <% end %>
+	   <%= radio_button("post", "category", "mouse") %>Change Image on mouseover
+       <%= radio_button("post", "category", "click") %>Change Image on click
 	    <%= submit_tag("Save") %>
     </div>
 	<% end %>
