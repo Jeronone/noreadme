@@ -54,11 +54,11 @@
                 <%= @product.title %> <span class="pull-right muted"><%= @product.price_range %> <%= shop_session.shop.currency %></span>
               </a>
             </div>
-        
+             
             <div id="<%= @product.id %>" class="accordion-body collapse">
               <div class="accordion-inner">
 
-                           
+                 <%= @product.option1 %>          
               <% if !@product.variants.empty? %>
 			  <p>This Product has following Options</p>
 			   <h3>Variants For this product</h3>
