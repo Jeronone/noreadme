@@ -14,7 +14,6 @@
   <div class="span12"> 
   
   Working on fetching the the options only for swatches
-  <%= @product.inspect %>
    <%= form_tag("/check",method: "get") do %> 
    <div class="field">
        <%= hidden_field_tag(:product_id, @product.id) %>
@@ -56,7 +55,10 @@
 
                            
               <% if !@product.variants.empty? %>
-			  
+			  <p>This Product has following Options</p>
+			  <%= @product.variants.option1 %>
+			  <%= @product.variants.option2 %>
+			  <%= @product.variants.option3 %>
 				<h3>Variants For this product</h3>
 				<table>
 				<thead>
