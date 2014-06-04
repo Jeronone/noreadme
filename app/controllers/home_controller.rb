@@ -120,13 +120,6 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	   @selectedColor=params[:car]
 	   @p=params[:product_id]
 	   @product = ShopifyAPI::Product.find(params[:product_id])
-	   @meta= @product.add_metafield(ShopifyAPI::Metafield.new({
-:description => 'save_color',
-:namespace => 'jt_swatch',
-:key => 'jt_swatch_color',
-:value => @selectedColor,
-:value_type => 'string'
-}))
 	end
   
 end
