@@ -117,7 +117,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	end
 	
 	def color
-	   @selectedColor=params[:color]
+	   @selectedColor=params[:car]
 	end
   
 end
