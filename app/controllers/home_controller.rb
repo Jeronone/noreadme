@@ -117,7 +117,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	end
 	
 	def color
-	   @selectedColor=params[:car]
+	   @selectedColor=params[:car][:color]
 	   @p=params[:product_id]
 	   @product = ShopifyAPI::Product.find(params[:product_id])
 	end

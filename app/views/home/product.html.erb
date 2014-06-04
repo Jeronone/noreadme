@@ -122,7 +122,7 @@
 				<td>
 				   <%= form_tag("/color",method: "get") do %>
 					<%= hidden_field_tag(:product_id, @product.id) %>
-					<%= color_field("car",value="") %>
+					<%= color_field("car","color") %>
 					<%= submit_tag("Save") %>
 				   <% end %>
 				</td>
