@@ -74,6 +74,7 @@
 				<th>Current Swatch Image</th>
 				<th>Upload Swatch Image</th>
 				<th>Delete</th>
+				<th>Color</th>
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
@@ -117,6 +118,11 @@
 			    <td>
 				
 				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: @del %>
+				</td>
+				<td>
+				   <%= form_tag("/check",method: "get") do %> 
+				   <%= color_field(:product, :favorite_color) %>
+				   <%= submit_tag("Save") %>
 				</td>
 				</tr>
 				<% end %>
