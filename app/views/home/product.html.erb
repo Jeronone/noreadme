@@ -120,11 +120,11 @@
 				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: @del %>
 				</td>
 				<td>
-				<%= form_tag("/color",method: "get") do %>
+				   <%= form_tag("/color",method: "get") do %>
 					<%= hidden_field_tag(:product_id, @product.id) %>
-					<%= color_field("car",value="") %>
+					<%= color_field("car","color",value="") %>
 					<%= submit_tag("Save") %>
-				<% end %>
+				   <% end %>
 				</td>
 				</tr>
 				<% end %>

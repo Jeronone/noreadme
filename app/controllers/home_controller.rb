@@ -117,7 +117,8 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	end
 	
 	def color
-	   @selectedColor=params[:car].to_s
+	   @selectedColor=params[:car]
+	   @selectedColor=@selectedcolor['color']
 	   @p=params[:product_id]
 	   @product = ShopifyAPI::Product.find(params[:product_id])
 	   @meta= @product.add_metafield(ShopifyAPI::Metafield.new({
