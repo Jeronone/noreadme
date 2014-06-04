@@ -123,7 +123,7 @@
 				   <%= form_tag("/color",method: "get") do %>
 					<%= hidden_field_tag(:vid, variant.id) %>
 					<%= hidden_field_tag(:pid, @product.id) %>
-					<%= text_field("car","color" ) %>
+					<%= text_field("car","color",options.merge(class: 'inputbox')) %>
 					<%= submit_tag("Save") %>
 				   <% end %>
 				</td>
