@@ -12,6 +12,9 @@
 
 <div class="row">
   <div class="span12"> 
+  
+  Working on fetching the the options only for swatches
+  <%= @product.inspect %>
    <%= form_tag("/check",method: "get") do %> 
    <div class="field">
        <%= hidden_field_tag(:product_id, @product.id) %>
