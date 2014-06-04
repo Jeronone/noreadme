@@ -57,11 +57,19 @@
              
             <div id="<%= @product.id %>" class="accordion-body collapse">
               <div class="accordion-inner">
-
-                 <%= @product.options %> 
-          		<% @product.options.each_with_index do | option, indexO| %>
-				<%= option.name %>
+			    <table>
+				<tr>
+				<th>Option 1</th>
+				<th>Option 2</th>
+				<th>Option 3</th>
+				</tr>
+				<tr>
+				<% @product.options.each_with_index do | option, indexO| %>
+				<td><%= option.values %></td>
 				<% end %>
+				</tr>
+				</table>
+          		
               <% if !@product.variants.empty? %>
 			  <p>This Product has following Options</p>
 			   <h3>Variants For this product</h3>
