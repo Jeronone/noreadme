@@ -6,6 +6,7 @@ Vesriontest::Application.routes.draw do
   get 'delete' =>'home#destroy'
   get 'delete2' => 'home#destroyC'
   get 'check' => 'home#check'
+  get 'color' => 'home#color'
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

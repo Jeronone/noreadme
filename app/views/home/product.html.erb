@@ -120,7 +120,7 @@
 				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title,:pid=>@product.id), id: @del %>
 				</td>
 				<td>
-				   <%= form_tag("/check",method: "get") do %> 
+				   <%= form_tag("/color",method: "get") do %> 
 	     <%= color_field("car", "color") %>
 				   <%= submit_tag("Save") %>
 				   <% end %>

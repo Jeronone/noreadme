@@ -115,5 +115,9 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	format.html { redirect_to :action => 'product', :id => params[:product_id] }
 	end
 	end
+	
+	def color
+	   @selectedColor=params[:color]
+	end
   
 end
