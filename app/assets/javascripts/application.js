@@ -14,3 +14,4 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require cloudinary 
+//= require jpicker
