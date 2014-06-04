@@ -59,7 +59,7 @@
               <div class="accordion-inner">
 
                  <%= @product.options %> 
-          		<% @product.options.each_with_index do | options, indexO| %>
+          		<% @product.options.each_with_index do | option, indexO| %>
 				<%= option.name %>
 				<% end %>
               <% if !@product.variants.empty? %>
