@@ -66,4 +66,4 @@ gem 'rails_12factor', group: :production
 
 gem 'carrierwave'
 gem 'cloudinary'
-gem 'jpicker-rails', '~> 0.1'
+gem 'jquery-minicolors-rails'
