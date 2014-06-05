@@ -84,26 +84,31 @@
 				</tr>
 				<% end %>	
 					<% end %>
+					<% if indexO == 1%>
+							<% @values2=[] %>
+						<%  @product.variants.each_with_index do |variant, indexv| %>
+						<% unless @values2.include?(variant.option2) %>
+							<% @values2 << variant.option2 %>
+						<% end %>
+						<% end %>
+						<%  @values2.each_with_index do |value, val2| %>
+						<tr>
+						<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
+						   <td><%= value %></td>
+						<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
+						</td>
+						</tr>
+							<% end %>
+					<% end %>
 				<% end %>
 				
 				<tr>
-				<% @values2=[] %>
-				<%  @product.variants.each_with_index do |variant, indexv| %>
-				<% unless @values2.include?(variant.option2) %>
-					<% @values2 << variant.option2 %>
-				<% end %>
-				<% end %>
+				
 				
 				</tr>
 				</table>
 				<table>
-				<%  @values2.each_with_index do |value, val2| %>
-				<tr>
-				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
-				   <td><%= value %></td>
-				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
-				</td>
-					<% end %>
+				
 					</table>
           		<% if !@product.variants.empty? %>
 			 
