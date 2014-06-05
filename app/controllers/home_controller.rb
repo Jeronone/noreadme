@@ -20,9 +20,9 @@ class HomeController < ApplicationController
       @product1 = ShopifyAPI::Product.find(params[:id])
 	   variantid=params[:vid]
 	   varianttitle=params[:vtitle]
-	   oid=params[:oid1]
-	   oid2=params[:oid2]
-	   oid3=params[:oid3]
+	   @oid=params[:oid1]
+	   @oid2=params[:oid2]
+	   @oid3=params[:oid3]
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
 	 
