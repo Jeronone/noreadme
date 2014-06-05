@@ -210,7 +210,7 @@
 				</td>
 				<td>
 				<td>
-				<%= form_for(:product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
+				<%= form_for(:product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title,:oid1=>variant.option1,:oid2=>variant.option2,:oid3=>variant.option3}, :html => {:multipart => true}) do |f| %>
 				<%= f.file_field(:product_image) %>
 				<%= submit_tag('Upload') %>
 				<% end %>

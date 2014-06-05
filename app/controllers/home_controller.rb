@@ -20,6 +20,9 @@ class HomeController < ApplicationController
       @product1 = ShopifyAPI::Product.find(params[:id])
 	   variantid=params[:vid]
 	   varianttitle=params[:vtitle]
+	   oid=params[:oid1]
+	   oid2=params[:oid2]
+	   oid3=params[:oid3]
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
 	 
@@ -35,18 +38,18 @@ class HomeController < ApplicationController
       #a.attachment = Base64.encode64(uploaded_image.read)
       #a.filename = varianttitle+"-"+variantid+".png"
       #a.save
-	  respond_to do |format|
+	 # respond_to do |format|
     if(@product1)
         uploaded_image = params[:product][:product_image]
         @product1.images << ShopifyAPI::Image.new({:attachment =>
 Base64.encode64(uploaded_image.read), :filename =>variantid+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
  @product1.save
-format.html { redirect_to :action => 'product', :id => @product1.id }
+#format.html { redirect_to :action => 'product', :id => @product1.id }
 		#product.update_attributes(params[:product])
         flash[:notice] = "Successfully updated!"
        
     end
-	end
+	#end
 	  end
 	  
 	  def product
