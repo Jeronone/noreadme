@@ -28,7 +28,7 @@ class HomeController < ApplicationController
 	     @oidf=@oid.to_s() +'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
 		 @case="case12"
-		 if defined?(@oid3 && @oid3 == '123')
+		 if params.has_key?(:oid3)
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
 			@case="case123"
