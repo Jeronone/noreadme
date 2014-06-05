@@ -23,10 +23,33 @@ class HomeController < ApplicationController
 	   @oid=params[:oid1]
 	   @oid2=params[:oid2]
 	   @oid3=params[:oid3]
+	   
 	   if @oid!='' && @oid2 != ''
 	     @oidf=@oid.to_s() +'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
+		 if @oid3 !=''
+			@oidf=@oidf.to_s() +'-'
+			@oidf=@oidf.concat(@oid3.to_s)
+		 end
+	   else
+	     if @oid!='' && @oid2==''
+			@oidf=@oid
+			if @oid3 !=''
+			@oidf=@oidf.to_s() +'-'
+			@oidf=@oidf.concat(@oid3.to_s)
+			end
+		 elsif @oid=='' && @oid2!=''
+			@oidf=@oid2
+			if @oid3 !=''
+			@oidf=@oidf.to_s() +'-'
+			@oidf=@oidf.concat(@oid3.to_s)
+			end
+		 end
+		 
 	   end
+
+	  
+
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
 	 
