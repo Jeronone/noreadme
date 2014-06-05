@@ -63,11 +63,6 @@
 			   <p>This Product has following Options</p>
 			    <table>
 				<tr>
-				<th>Option 1</th>
-				<th>Option 2</th>
-				<th>Option 3</th>
-				</tr>
-				<tr>
 				<% @product.options.each_with_index do | option, indexO| %>
 				<td><%= option.name %></td>
 				<% end %>
