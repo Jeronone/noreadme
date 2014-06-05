@@ -70,7 +70,9 @@
 				<tr>
 				<% @values1=[] %>
 				<%  @product.variants.each_with_index do |variant, indexv| %>
-				<% @values1 << variant.option1 %>
+				<% unless @values1.include?(variant.option1) %>
+					<% @values1 << variant.option1 %>
+				<% end %>
 				<td><%= variant.option1 %></td>
 				<% end %>
 				<%= @values1  %>
