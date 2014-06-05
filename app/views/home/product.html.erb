@@ -91,15 +91,7 @@
 				</tr>
 				</table>
 				<table>
-				<%  @values1.each_with_index do |value, val| %>
-				 <tr>
-				 <td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
-				 <td><%= value %></td>
-				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
-				</td>
-				</tr>
-					<% end %>
-			    <%  @values2.each_with_index do |value, val2| %>
+				<%  @values2.each_with_index do |value, val2| %>
 				<tr>
 				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
 				   <td><%= value %></td>
