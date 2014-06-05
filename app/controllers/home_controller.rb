@@ -123,8 +123,10 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	   @select= "http://placehold.it/50x35/#{@selectedColor}/ffffff&text=+"
 	   @p=params[:product_id]
 	   @variant=params[:vid]
+	   @p=@p.to_s() +'-'
+	@p.concat(@variant.to_s)
 	   #@product = ShopifyAPI::Product.find(params[:product_id])
-	   Cloudinary::Uploader.upload(@select,:public_id =>'#{@p}-#{@variant}')
+	   Cloudinary::Uploader.upload(@select,:public_id =>@p)
 	   format.html { redirect_to :action => 'product', :id => params[:pid] }
 
 	end
