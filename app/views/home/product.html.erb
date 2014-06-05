@@ -67,6 +67,13 @@
 				<td><%= option.name %></td>
 				<% end %>
 				</tr>
+				<tr>
+				<%  @product.variants.each_with_index do |variant, indexv| %>
+				<%= variant.option1 %>
+				<%= variant.option2 %>
+				<%= variant.option3 %>
+				<% end %>
+				</tr>
 				</table>
           		
               <% if !@product.variants.empty? %>
