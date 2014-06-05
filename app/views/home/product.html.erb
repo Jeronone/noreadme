@@ -68,9 +68,12 @@
 				<% end %>
 				</tr>
 				<tr>
+				<% @values1=[] %>
 				<%  @product.variants.each_with_index do |variant, indexv| %>
+				<% @values1 << variant.option1 %>
 				<td><%= variant.option1 %></td>
 				<% end %>
+				<%= @values1  %>
 				</tr>
 				</table>
           		
