@@ -121,7 +121,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	   @selectedColor=params[:car][:color]
 	   @selectedColor=@selectedColor.gsub(/#/, "")
 	   @select= "http://placehold.it/50x35/#{@selectedColor}/ffffff&text=+"
-	   @p=params[:product_id]
+	   @p=params[:pid]
 	   @variant=params[:vid]
 	   @p=@p.to_s() +'-'
 	@p.concat(@variant.to_s)
