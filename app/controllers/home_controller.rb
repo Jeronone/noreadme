@@ -85,7 +85,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	@vtitle.concat(vtid.to_s)
 	Cloudinary::Uploader.destroy(@vtitle, :invalidate => true)
 	#format.html { redirect_to :action => 'product', :id => pid }
-	end
+	#end
 
 	end
 	
