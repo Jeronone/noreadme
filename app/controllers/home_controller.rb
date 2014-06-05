@@ -77,7 +77,7 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	
 	def destroyC
 	#respond_to do |format|
-	vtid=params[:vid]
+	vtid=params[:vtitle]
 	@vid=params[:vid]
 	pid=params[:pid]
 	@vtitle=params[:vtitle]
