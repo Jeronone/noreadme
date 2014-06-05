@@ -85,6 +85,9 @@
 				<% end %>	
 					<% end %>
 					<% if indexO == 1%>
+					<tr>
+					<td><%= option.name %></td>
+					</tr>
 							<% @values2=[] %>
 						<%  @product.variants.each_with_index do |variant, indexv| %>
 						<% unless @values2.include?(variant.option2) %>
