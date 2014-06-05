@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 	   @oid2=params[:oid2]
 	   @oid3=params[:oid3]
 	   
-	   if @oid!='' && @oid2!= ''
+	   if params.has_key?(:oid) && params.has_key?(:oid2)
 	     @oidf=@oid.to_s() +'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
 		 @case="case12"
@@ -34,18 +34,18 @@ class HomeController < ApplicationController
 			@case="case123"
 		 end
 	   else
-	     if @oid!='' && @oid2==''
+	     if params.has_key?(:oid) && params.has_key?(:oid2)
 			@oidf=@oid
 			@case="case1"
-			if @oid3!=''
+			if params.has_key?(:oid3)
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
 			@case="case13"
 			end
-		 elsif @oid=='' && @oid2!=''
+		 elsif params.has_key?(:oid) && params.has_key?(:oid2)
 			@oidf=@oid2
 			@case="case2"
-			if @oid3!=''
+			if params.has_key?(:oid3)
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
 			@case="case23"
