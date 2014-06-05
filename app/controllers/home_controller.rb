@@ -34,7 +34,7 @@ class HomeController < ApplicationController
 			@case="case123"
 		 end
 	   else
-	     if params.has_key?(:oid) && params[:oid2].empty?
+	     if params.has_key?(:oid1) && params[:oid2].empty?
 			@oidf=@oid
 			@case="case1"
 			if params.has_key?(:oid3)
