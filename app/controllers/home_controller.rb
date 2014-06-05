@@ -76,14 +76,14 @@ format.html { redirect_to :action => 'product', :id => @product1.id }
 	end
 	
 	def destroyC
-	#respond_to do |format|
+	respond_to do |format|
 	vtid=params[:vtitle]
 	pid=params[:pid]
 	@vtitle=pid.to_s() +'-'
 	@vtitle=@vtitle.concat(vtid.to_s)
 	Cloudinary::Uploader.destroy(@vtitle, :invalidate => true)
-	#format.html { redirect_to :action => 'product', :id => pid }
-	#end
+	format.html { redirect_to :action => 'product', :id => pid }
+	end
 
 	end
 	
