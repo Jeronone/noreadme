@@ -73,7 +73,6 @@
 				<% unless @values1.include?(variant.option1) %>
 					<% @values1 << variant.option1 %>
 				<% end %>
-				<td><%= variant.option1 %></td>
 				<% end %>
 				<%= @values1  %>
 				</tr>
@@ -83,7 +82,6 @@
 				<% unless @values2.include?(variant.option2) %>
 					<% @values2 << variant.option2 %>
 				<% end %>
-				<td><%= variant.option2 %></td>
 				<% end %>
 				<%= @values2  %>
 				</tr>
