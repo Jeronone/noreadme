@@ -69,9 +69,9 @@
 				</tr>
 				<tr>
 				<%  @product.variants.each_with_index do |variant, indexv| %>
-				<%= variant.option1 %>
-				<%= variant.option2 %>
-				<%= variant.option3 %>
+				<td><%= variant.option1 %></td>
+				<td><%= variant.option2 %></td>
+				<td><%= variant.option3 %></td>
 				<% end %>
 				</tr>
 				</table>
