@@ -27,28 +27,28 @@ class HomeController < ApplicationController
 	   if @oid!='' && @oid2!= ''
 	     @oidf=@oid.to_s() +'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
-		 @case "case12"
+		 @case="case12"
 		 if @oid3!=''
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
-			@case "case123"
+			@case="case123"
 		 end
 	   else
 	     if @oid!='' && @oid2==''
 			@oidf=@oid
-			@case "case1"
+			@case="case1"
 			if @oid3!=''
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
-			@case "case13"
+			@case="case13"
 			end
 		 elsif @oid=='' && @oid2!=''
 			@oidf=@oid2
-			@case "case2"
+			@case="case2"
 			if @oid3!=''
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
-			@case "case23"
+			@case="case23"
 			end
 		 end
 		 
