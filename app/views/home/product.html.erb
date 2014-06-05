@@ -62,10 +62,13 @@
               <div class="accordion-inner">
 			   <p>This Product has following Options</p>
 			    <table>
-				<tr>
+				
 				<% @product.options.each_with_index do | option, indexO| %>
-					<% if indexO == 1%>
+					<% if indexO == 0%>
+					<tr>
 					<td><%= option.name %></td>
+					</tr>
+					<tr>
 					<% @values1=[] %>
 						<%  @product.variants.each_with_index do |variant, indexv| %>
 							<% unless @values1.include?(variant.option1) %>
