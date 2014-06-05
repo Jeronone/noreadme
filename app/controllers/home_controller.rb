@@ -34,7 +34,7 @@ class HomeController < ApplicationController
 			@case="case123"
 		 end
 	   else
-	     if params.has_key?(:oid) && !params.has_key?(:oid2)
+	     if params.has_key?(:oid) && params[:oid2].empty?
 			@oidf=@oid
 			@case="case1"
 			if params.has_key?(:oid3)
@@ -42,7 +42,7 @@ class HomeController < ApplicationController
 			@oidf=@oidf.concat(@oid3.to_s)
 			@case="case13"
 			end
-		 elsif !params.has_key?(:oid) && params.has_key?(:oid2)
+		 elsif params[:oid].empty? && params.has_key?(:oid2)
 			@oidf=@oid2
 			@case="case2"
 			if params.has_key?(:oid3)
