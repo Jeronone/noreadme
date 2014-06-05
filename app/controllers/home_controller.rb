@@ -20,9 +20,6 @@ class HomeController < ApplicationController
       @product1 = ShopifyAPI::Product.find(params[:id])
 	   variantid=params[:vid]
 	   @varianttitle=params[:vtitle]
-	   @oid=''
-	   @oid2=''
-	   @oid3=''
 	   @oid=params[:oid1]
 	   @oid2=params[:oid2]
 	   @oid3=params[:oid3]
@@ -31,7 +28,7 @@ class HomeController < ApplicationController
 	     @oidf=@oid.to_s() +'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
 		 @case="case12"
-		 if @oid3!=''
+		 if defined?(@oid3 && @oid3 == '123')
 			@oidf=@oidf.to_s() +'-'
 			@oidf=@oidf.concat(@oid3.to_s)
 			@case="case123"
