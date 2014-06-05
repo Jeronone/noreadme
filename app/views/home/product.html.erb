@@ -61,7 +61,7 @@
             <div id="<%= @product.id %>" class="accordion-body collapse">
               <div class="accordion-inner">
 			   <p>This Product has following Options</p>
-			    <table>
+			    <table cellpadding=10px>
 				
 				<% @product.options.each_with_index do | option, indexO| %>
 					<% if indexO == 0%>
@@ -168,7 +168,7 @@
 				
 				</tr>
 				</table>
-				<table>
+				<table cellpadding="10px">
 				
 					</table>
           		<% if !@product.variants.empty? %>
