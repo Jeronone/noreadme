@@ -74,7 +74,6 @@
 					<% @values1 << variant.option1 %>
 				<% end %>
 				<% end %>
-				<%= @values1  %>
 				</tr>
 				<tr>
 				<% @values2=[] %>
@@ -83,11 +82,12 @@
 					<% @values2 << variant.option2 %>
 				<% end %>
 				<% end %>
-				<%= @values2  %>
 				</tr>
 				</table>
-          		
-              <% if !@product.variants.empty? %>
+				<%  @values1.each_with_index do |value, val| %>
+					<%= value %>
+				<% end %>
+          		<% if !@product.variants.empty? %>
 			 
 			   <h3>Variants For this product</h3>
 				<table>
