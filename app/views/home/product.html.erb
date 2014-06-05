@@ -64,15 +64,15 @@
 			    <table>
 				<tr>
 				<% @product.options.each_with_index do | option, indexO| %>
-				<td><%= option.name %></td>
-				<% end %>
-				</tr>
-				<tr>
-				<% @values1=[] %>
-				<%  @product.variants.each_with_index do |variant, indexv| %>
-				<% unless @values1.include?(variant.option1) %>
-					<% @values1 << variant.option1 %>
-				<% end %>
+					<% if indexO == 1%>
+					<td><%= option.name %></td>
+					<% @values1=[] %>
+						<%  @product.variants.each_with_index do |variant, indexv| %>
+							<% unless @values1.include?(variant.option1) %>
+								<% @values1 << variant.option1 %>
+							<% end %>
+						<% end %>	
+					<% end %>
 				<% end %>
 				</tr>
 				<tr>
@@ -81,6 +81,12 @@
 				<% unless @values2.include?(variant.option2) %>
 					<% @values2 << variant.option2 %>
 				<% end %>
+				<% end %>
+				<%  @values1.each_with_index do |value, val| %>
+				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
+				<td><%= value %></td>
+				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
+				</td>
 				<% end %>
 				</tr>
 				</table>
