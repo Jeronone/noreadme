@@ -25,7 +25,7 @@ class HomeController < ApplicationController
 	   @oid3=params[:oid3]
 	   if @oid!='' && @oid2 != ''
 	     @oidf=@oid.to_s() +'-'
-		 @oidf=@poidf.concat(@oid2.to_s)
+		 @oidf=@oidf.concat(@oid2.to_s)
 	   end
 	  # code to check if the image already exist or not
 	  # if yes then delete the existing one 
