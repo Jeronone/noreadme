@@ -24,6 +24,7 @@ class HomeController < ApplicationController
 	   @oid2=params[:oid2]
 	   @oid3=params[:oid3]
 	   @oidf=params[:id]
+	   @oidf=@oidf.to_s +'-'
 	   if params.has_key?(:oid1) && params.has_key?(:oid2)
 	     #@oidf=@oidf.to_s +'-'
 		 @oidf=@oid+'-'
