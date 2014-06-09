@@ -35,9 +35,9 @@ class HomeController < ApplicationController
 			@case="case123"
 		 end
 	   elsif params.has_key?(:oid1) && !params.has_key?(:oid2) && !params.has_key?(:oid3)
-		@oid=@oid.gsub(/[" "]/, '-') 
-			@oidf=@oid
-			@case="case1"
+		@oid=@oid.gsub(/[" "]/, '-')
+		@oidf=@oidf.concat(@oid.to_s)	
+		@case="case1"
 	   else
 	     if params.has_key?(:oid1) && params.has_key?(:oid2)
 			@oidf=@oid
