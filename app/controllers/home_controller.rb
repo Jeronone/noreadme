@@ -25,8 +25,8 @@ class HomeController < ApplicationController
 	   @oid3=params[:oid3]
 	   @oidf=params[:id]
 	   if params.has_key?(:oid1) && params.has_key?(:oid2)
-	     @oidf=@oidf.to_s()+'-'
-		 @oidf=@oid.to_s() +'-'
+	     @oidf=@oidf.to_s +'-'
+		 @oidf=@oid.to_s +'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
 		 @case="case12"
 		 if params.has_key?(:oid3)
