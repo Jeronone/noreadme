@@ -171,5 +171,4 @@ Base64.encode64(uploaded_image.read), :filename =>variantid+".png",:metafield =>
 
 	end
 	end
-  
-end
+  end
