@@ -2,6 +2,11 @@ Vesriontest::Application.routes.draw do
   get 'welcome' => 'home#welcome'
   get 'design' => 'home#design'
   get 'upload' => 'home#upload'
+  get 'product' =>'home#product'
+  get 'delete' =>'home#destroy'
+  get 'delete2' => 'home#destroyC'
+  get 'check' => 'home#check'
+  get 'color' => 'home#color'
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
