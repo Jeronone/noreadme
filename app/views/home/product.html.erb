@@ -11,13 +11,32 @@
 </header>
 
 <div class="row">
-  
-
-
   <div class="span12"> 
+  
+  Working on fetching the the options only for swatches
+   <%= form_tag("/check",method: "get") do %> 
+   <div class="field">
+       <%= hidden_field_tag(:product_id, @product.id) %>
+	   <% if @metafields %>
+	   <% if @metafields.value=="true"%>
+	   <%= label_tag 'check', 'Show additional variant images' %>
+	     <%= check_box_tag('check', value = "1", checked = true) %>
+	   <% else %>
+	   <%= label_tag 'check', 'Show additional variant images' %>
+	   <%= check_box_tag('check', value = "1") %>
+	   <% end %>
+	   <% else %>
+	    <%= label_tag 'check', 'Show additional variant images' %>
+	   <%= check_box_tag('check', value = "1") %>
+	   <% end %>
+	   <br/>
+	   <%= radio_button("post", "category", "mouse") %>Change Image on mouseover
+       <%= radio_button("post", "category", "click") %>Change Image on click
+	    <%= submit_tag("Save") %>
+    </div>
+	<% end %>
     <h2>New Products</h2>
-    
-	<br />
+	
     <div class="accordion" id="accordion">      
       
       <% if @product.blank? %>
@@ -38,14 +57,123 @@
                 <%= @product.title %> <span class="pull-right muted"><%= @product.price_range %> <%= shop_session.shop.currency %></span>
               </a>
             </div>
-        
+             
             <div id="<%= @product.id %>" class="accordion-body collapse">
               <div class="accordion-inner">
-
-                           
-              <% if !@product.variants.empty? %>
-			  
-				<h3>Variants For this product</h3>
+			   <p>This Product has following Options</p>
+			    <table cellpadding=10px>
+				
+				<% @product.options.each_with_index do | option, indexO| %>
+					<% if indexO == 0%>
+					<tr>
+					<td><%= option.name %></td>
+					<td>Current Swatch color/image</td>
+					<td>Delete </td>
+					<td>Upload Image</td>
+					<td>Swatch Color</td>
+					</tr>
+					
+					<% @values1=[] %>
+						<%  @product.variants.each_with_index do |variant, indexv| %>
+							<% unless @values1.include?(variant.option1) %>
+								<% @values1 << variant.option1 %>
+							<% end %>
+						<% end %>
+						<%  @values1.each_with_index do |value, val| %>
+						<tr>
+				<td><%= value %></td>
+				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
+				<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
+				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
+				</td>
+				<td>
+						<%= form_tag("/color",method: "get") do %>
+						<%= hidden_field_tag(:vid, value) %>
+						<%= hidden_field_tag(:pid, @product.id) %>
+						<%= text_field("car","color",options={:class=>'inputbox'}) %>
+						<%= submit_tag("Save") %>
+						<% end %>
+						</td>
+				</tr>
+				<% end %>	
+					<% end %>
+					<% if indexO == 1%>
+					<tr>
+					<td><%= option.name %></td>
+					<td>Current Swatch color/image</td>
+					<td>Delete</td>
+					<td>Upload Image</td>
+					<td>Swatch Color</td>
+					</tr>
+							<% @values2=[] %>
+						<%  @product.variants.each_with_index do |variant, indexv| %>
+						<% unless @values2.include?(variant.option2) %>
+							<% @values2 << variant.option2 %>
+						<% end %>
+						<% end %>
+						<%  @values2.each_with_index do |value, val2| %>
+						<tr>
+						<td><%= value %></td>
+						<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
+						<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
+   						<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
+						</td>
+						<td>
+						<%= form_tag("/color",method: "get") do %>
+						<%= hidden_field_tag(:vid, value) %>
+						<%= hidden_field_tag(:pid, @product.id) %>
+						<%= text_field("car","color",options={:class=>'inputbox'}) %>
+						<%= submit_tag("Save") %>
+						<% end %>
+						</td>
+						</tr>
+							<% end %>
+					<% end %>
+					<% if indexO == 2%>
+					<tr>
+					<td><%= option.name %></td>
+					<td>Current Swatch color/image</td>
+					<td>Delete</td>
+					<td>Upload Image</td>
+					<td>Swatch Color</td>
+					</tr>
+							<% @values3=[] %>
+						<%  @product.variants.each_with_index do |variant, indexv| %>
+						<% unless @values3.include?(variant.option3) %>
+							<% @values2 << variant.option3 %>
+						<% end %>
+						<% end %>
+						<%  @values3.each_with_index do |value, val3| %>
+						<tr>
+						<td><%= value %></td>
+						<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
+						<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
+ 						<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
+						</td>
+						<td>
+						<%= form_tag("/color",method: "get") do %>
+						<%= hidden_field_tag(:vid, value) %>
+						<%= hidden_field_tag(:pid, @product.id) %>
+						<%= text_field("car","color",options={:class=>'inputbox'}) %>
+						<%= submit_tag("Save") %>
+						<% end %>
+						</td>
+						</tr>
+							<% end %>
+					<% end %>
+				<% end %>
+				
+				<tr>
+				
+				
+				</tr>
+				</table>
+				<table cellpadding="10px">
+				
+					</table>
+          		<% if !@product.variants.empty? %>
+			 
+			   <h3>Variants For this product</h3>
 				<table>
 				<thead>
 				<th>Index</th>
@@ -55,9 +183,6 @@
 				<th>Current Variant Image</th>
 				<th>Delete</th>
 				<th>Upload Variant Image</th>
-				<th>Current Swatch Image</th>
-				<th>Delete</th>
-				<th>Upload Swatch Image</th>
 				</thead>
 				<tbody>
 				<%  @product.variants.each_with_index do |variant, index2| %>
@@ -68,44 +193,27 @@
 				<td><%= variant.option3 %></td>
 				<td>  <% if !@product.images.empty? %>
 				<% @product.images.each_with_index do | img, index1| %>
-				<%= img.small %>
-				<%= variant.title %>
-					<% if img.small.include?(variant.title) %>
+				
+					<% if img.small.include?(variant.id.to_s) %>
 						<% @testvar = img.small %>
 						<% @imgid= img.id %>
+				<%= link_to image_tag(@testvar), '#modal-'+@product.id.to_s, :'data-toggle' => 'modal' %>
+				<%= link_to "Delete", url_for(:controller => "home", :action => "destroy", :id => @product.id, :imgid => @imgid) %>
+
 					 <% end %>
 					
 				<% end %>
                   
                 <% end %>
-				<% if @testvar %>
-				<%= link_to image_tag(@testvar), '#modal-'+@product.id.to_s, :'data-toggle' => 'modal' %>
-				  
-				  <% end %>
-				
+							
 				  
 				</td>
 				<td>
-				<% if @testvar %>
-				<%= link_to "Delete", url_for(:controller => "home", :action => "destroy", :id => @product.id, :imgid => @imgid) %>
-				<% @imgid=nil %>
-				<% @testvar=nil %>
-				<% end %>
 				<td>
-				<%= form_for(:product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title}, :html => {:multipart => true}) do |f| %>
+				<%= form_for(:product, :url => {:action => 'upload', :id => @product.id, :vid =>variant.id ,:vtitle=>variant.title,:oid1=>variant.option1,:oid2=>variant.option2,:oid3=>variant.option3}, :html => {:multipart => true}) do |f| %>
 				<%= f.file_field(:product_image) %>
 				<%= submit_tag('Upload') %>
 				<% end %>
-				</td>
-				<td>
-				
-
-<%= cl_image_tag("#{variant.title}-#{variant.id}",:width => 120, :height => 80) %>
-				</td>
-				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{variant.title}-#{variant.id}",:resource_type=>'image',:crop => :limit, :width => 1000, :height => 1000, 
-                          :html => {:class => "image_upload"}) %></td>
-			    <td>
-				<%= link_to "Delete2", url_for(:controller => "home", :action => "destroyC", :vid => variant.id, :vtitle => variant.title) %>
 				</td>
 				</tr>
 				<% end %>
@@ -125,7 +233,6 @@
       
       
     </div> <!-- accordion -->
-<div class='preview'></div>
 <div class='progress_bar'></div>
 
 
@@ -133,11 +240,7 @@
 </div>
 <script type="text/javascript">
 $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {  
-  $('.preview').html(
-    $.cloudinary.image(data.result.public_id, 
-      { format: data.result.format, version: data.result.version, 
-        crop: 'fill', width: 150, height: 100 })
-  );    
+  window.location.reload();   
   $('.image_public_id').val(data.result.public_id);    
   return true;
 });
@@ -145,3 +248,19 @@ $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
   $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
 })
 </script>
+<script type="text/javascript">
+$('img').error(function(){
+/*var id=$(this).attr('id');
+var res = id.replace("image", "delete");
+$("#"+res).remove();*/
+$(this).remove();
+})
+</script>
+<script type="text/javascript">        
+  $(document).ready(
+    function()
+    {
+      $('.inputbox').minicolors();
+  });
+</script>
+<div id="Inline"></div>
