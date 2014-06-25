@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  @@storage ||= []
+  
   around_filter :shopify_session, :except => 'welcome'
   
   
