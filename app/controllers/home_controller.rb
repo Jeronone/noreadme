@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 	   @oid=params[:oid1]
 	   @oid2=params[:oid2]
 	   @oid3=params[:oid3]
-	   @oidf=params[:id]
+	   @oidf=params[:vid]
 	   @oidf=@oidf.to_s() +'-'
 	   if params.has_key?(:oid1) && params.has_key?(:oid2)
 	     #@oidf=@oidf.to_s +'-'
@@ -82,7 +82,7 @@ class HomeController < ApplicationController
     if(@product1)
         uploaded_image = params[:product][:product_image]
         @product1.images << ShopifyAPI::Image.new({:attachment =>
-Base64.encode64(uploaded_image.read), :filename =>variantid+@oidf+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
+Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
 @product1.save
 #format.html { redirect_to :action => 'product', :id => @product1.id }
 		#product.update_attributes(params[:product])
