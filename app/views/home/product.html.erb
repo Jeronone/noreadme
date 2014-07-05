@@ -193,8 +193,9 @@
 				<td><%= variant.option3 %></td>
 				<td>  <% if !@product.images.empty? %>
 				<% @product.images.each_with_index do | img, index1| %>
-				    <%= img.small %>
+				   
 					<% if img.small.include?(variant.id.to_s) %>
+						<%= img.small %>
 						<% @testvar = img.small %>
 						<% @imgid= img.id %>
 				<%= link_to image_tag(@testvar), '#modal-'+@product.id.to_s, :'data-toggle' => 'modal' %>
