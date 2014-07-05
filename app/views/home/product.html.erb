@@ -193,8 +193,7 @@
 				<td><%= variant.option3 %></td>
 				<td>  <% if !@product.images.empty? %>
 				<% @product.images.each_with_index do | img, index1| %>
-				   <%= img.small %><br/>
-				   <%= variant.id %>
+				  
 					<% if img.small.include?(variant.id.to_s) %>
 						
 						<% @testvar = img.small %>
