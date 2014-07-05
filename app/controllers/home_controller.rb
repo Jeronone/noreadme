@@ -82,7 +82,7 @@ class HomeController < ApplicationController
     if(@product1)
         uploaded_image = params[:product][:product_image]
         @product1.images << ShopifyAPI::Image.new({:attachment =>
-Base64.encode64(uploaded_image.read), :filename =>variantid+"ruchi.png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
+Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:key => "alt",:value=>"ruchi",:value_type=>"string",:namespace => "tags"}})
 @product1.save
 #format.html { redirect_to :action => 'product', :id => @product1.id }
 		#product.update_attributes(params[:product])
