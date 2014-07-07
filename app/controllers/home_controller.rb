@@ -27,7 +27,7 @@ class HomeController < ApplicationController
 	   @oidf=params[:vid]
 	   @oidf=@oidf.to_s() +'-'
 	   if params.has_key?(:oid1) && params.has_key?(:oid2)
-	     @oidf=@oidf.to_s() +'-'
+	     @oidf=@oidf.to_s()
 		 @oidf=@oidf+@oid+'-'
 		 @oidf=@oidf.concat(@oid2.to_s)
 		 @case="case12"
