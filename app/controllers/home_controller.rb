@@ -100,7 +100,7 @@ Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:ke
     end
 	unless session[:product_id].blank?
       @product = ShopifyAPI::Product.find(session[:product_id])
-	  @metafields=ShopifyAPI::Metafield.find(:first,:params=>{:resource => "shop", :resource_id => session[:product_id], :key => "jt_swatch_show"})
+	  @metafields=ShopifyAPI::Metafield.find(:all,:params=>{:resource => "shop",:key => "jt_swatch_show"})
 	end
   end
   
