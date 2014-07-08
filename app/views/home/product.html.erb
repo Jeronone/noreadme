@@ -20,15 +20,15 @@
 	   <% if @metafields %>
 	
 	   <% @metafields.each do |metafield| %>
-	   <%= metafield.value %>
-	   <% end %>
-	   <% if @metafields=="true"%>
+	   <% if metafield.value=="true"%>
 	   <%= label_tag 'check', 'Show additional variant images' %>
 	     <%= check_box_tag('check', value = "1", checked = true) %>
 	   <% else %>
 	   <%= label_tag 'check', 'Show additional variant images' %>
 	   <%= check_box_tag('check', value = "1") %>
 	   <% end %>
+	   <% end %>
+	   
 	   <% else %>
 	    <%= label_tag 'check', 'Show additional variant images' %>
 	   <%= check_box_tag('check', value = "1") %>
