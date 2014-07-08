@@ -135,7 +135,7 @@ Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:ke
 	@check=params[:check]
 	respond_to do |format|
 	if @check
-	@product = ShopifyAPI::Product.find(params[:product_id])
+	@product = ShopifyAPI::Shop.find(params[:product_id])
 	  @meta= @product.add_metafield(ShopifyAPI::Metafield.new({
 :description => 'show variant images on click',
 :namespace => 'jt_swatch',
@@ -144,7 +144,7 @@ Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:ke
 :value_type => 'string'
 }))
 	else
-	@product = ShopifyAPI::Product.find(params[:product_id])
+	@product = ShopifyAPI::Shop.find(params[:product_id])
 	@meta= @product.add_metafield(ShopifyAPI::Metafield.new({
 :description => 'show variant images on click',
 :namespace => 'jt_swatch',
