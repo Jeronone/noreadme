@@ -18,7 +18,8 @@
    <div class="field">
        <%= hidden_field_tag(:product_id, @product.id) %>
 	   <% if @metafields %>
-	   <% if @metafields.value=="true"%>
+	   <%= @metafields.inspect %>
+	   <% if @metafields=="true"%>
 	   <%= label_tag 'check', 'Show additional variant images' %>
 	     <%= check_box_tag('check', value = "1", checked = true) %>
 	   <% else %>
