@@ -257,9 +257,9 @@ $('img').error(function(){
 var res = id.replace("image", "delete");
 $("#"+res).remove();*/
     $(this).remove();
-    $(this).parent('td').siblings('td').children('.delete').remove();
-
-})
+    var tdparent=$(this).parent('td').siblings('td');
+    console.log(tdparent);
+    })
 </script>
 <script type="text/javascript">        
   $(document).ready(
