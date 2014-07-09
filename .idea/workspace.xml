@@ -31,8 +31,8 @@
       <file leaf-file-name="product.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home/product.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62981576" vertical-offset="4010" max-vertical-offset="4709">
-              <caret line="258" column="6" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.25963148" vertical-offset="1307" max-vertical-offset="4709">
+              <caret line="86" column="114" selection-start-line="86" selection-start-column="114" selection-end-line="86" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -370,8 +370,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/home/product.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62981576" vertical-offset="4010" max-vertical-offset="4709">
-          <caret line="258" column="6" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.25963148" vertical-offset="1307" max-vertical-offset="4709">
+          <caret line="86" column="114" selection-start-line="86" selection-start-column="114" selection-end-line="86" selection-end-column="114" />
           <folding />
         </state>
       </provider>
