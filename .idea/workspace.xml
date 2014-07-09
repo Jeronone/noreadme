@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6afac1fd-5c05-4d7e-8e19-60bdd9126e21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/product.html.erb" afterPath="$PROJECT_DIR$/app/views/home/product.html.erb" />
-    </list>
+    <list default="true" id="6afac1fd-5c05-4d7e-8e19-60bdd9126e21" name="Default" comment="" />
     <ignored path="vesriontest.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="product.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home/product.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6834171" vertical-offset="1071" max-vertical-offset="4709">
+            <state vertical-scroll-proportion="-3.8978224" vertical-offset="3806" max-vertical-offset="4709">
               <caret line="87" column="159" selection-start-line="87" selection-start-column="159" selection-end-line="87" selection-end-column="159" />
               <folding />
             </state>
@@ -370,7 +368,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/home/product.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6834171" vertical-offset="1071" max-vertical-offset="4709">
+        <state vertical-scroll-proportion="-3.8978224" vertical-offset="3806" max-vertical-offset="4709">
           <caret line="87" column="159" selection-start-line="87" selection-start-column="159" selection-end-line="87" selection-end-column="159" />
           <folding />
         </state>
