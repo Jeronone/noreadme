@@ -12,8 +12,6 @@
 
 <div class="row">
   <div class="span12"> 
-  
-  Working on fetching the the options only for swatches
    <%= form_tag("/check",method: "get") do %> 
    <div class="field">
        <%= hidden_field_tag(:product_id, @product.id) %>
@@ -119,7 +117,7 @@
 						<tr>
 						<td><%= value %></td>
 						<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
-						<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
+						<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del,class:"delete" %></td>
    						<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
 						</td>
 						<td>
@@ -258,7 +256,9 @@ $('img').error(function(){
 /*var id=$(this).attr('id');
 var res = id.replace("image", "delete");
 $("#"+res).remove();*/
-$(this).remove();
+    $(this).remove();
+    $(this).parent('td').siblings('td').children('.delete').remove();
+
 })
 </script>
 <script type="text/javascript">        
