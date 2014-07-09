@@ -142,7 +142,7 @@
 							<% @values3=[] %>
 						<%  @product.variants.each_with_index do |variant, indexv| %>
 						<% unless @values3.include?(variant.option3) %>
-							<% @values2 << variant.option3 %>
+							<% @values3 << variant.option3 %>
 						<% end %>
 						<% end %>
 						<%  @values3.each_with_index do |value, val3| %>
