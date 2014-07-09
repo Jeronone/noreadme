@@ -85,7 +85,7 @@
 						<tr>
 				<td><%= value %></td>
 				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
-				<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
+				<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del ,class: "delete" %></td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
 				</td>
 				<td>
