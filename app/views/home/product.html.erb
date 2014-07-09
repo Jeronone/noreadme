@@ -84,8 +84,8 @@
 						<%  @values1.each_with_index do |value, val| %>
 						<tr>
 				<td><%= value %></td>
-				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50,:class => "image_show") %></td>
-				<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del ,class: "delete" %></td>
+				<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
+				<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
 				<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
 				</td>
 				<td>
@@ -117,7 +117,7 @@
 						<tr>
 						<td><%= value %></td>
 						<td><%= cl_image_tag("#{@product.id}-#{value}",:width => 50, :height => 50) %></td>
-						<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del,class:"delete" %></td>
+						<td><%= link_to "Delete", url_for(:controller => "home", :action => "destroyC", :vtitle => value,:pid=>@product.id), id: @del %></td>
    						<td><%= cl_image_upload_tag(:image_id,:format=>'png',:invalidate=>true,:public_id=>"#{@product.id}-#{value}",:resource_type=>'image',:crop => :limit,:html => {:class => "image_upload"}) %>
 						</td>
 						<td>
@@ -252,14 +252,12 @@ $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
 })
 </script>
 <script type="text/javascript">
-$('img.image_show').error(function(){
+$('img').error(function(){
 /*var id=$(this).attr('id');
 var res = id.replace("image", "delete");
 $("#"+res).remove();*/
-    $(this).remove();
-    $(this).parents('td').children().find('.delete').remove();
-   // console.log(tdparent);
-    })
+$(this).remove();
+})
 </script>
 <script type="text/javascript">        
   $(document).ready(
