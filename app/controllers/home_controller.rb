@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     # get 10 products
    @products = ShopifyAPI::Product.find(:all, :params => {:limit => 10})
     home=Home.new
-	puts YAML::dump(home)
+	
     # get latest 5 orders
     #@orders   = ShopifyAPI::Order.find(:all, :params => {:limit => 5, :order => "created_at DESC" })
   end
