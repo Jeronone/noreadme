@@ -1,3 +1,3 @@
 class Home < ActiveRecord::Base
-  validates :home, :presence > true
+  validates :id, :presence > true
 end
