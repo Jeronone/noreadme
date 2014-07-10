@@ -1,3 +1,4 @@
 class Home < ActiveRecord::Base
-fields :id, :vid
+@home=Home.all
+
 end

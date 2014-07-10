@@ -11,6 +11,8 @@ module Vesriontest
 	 # Shopify API connection credentials:
     config.shopify.api_key = 'fdb87264ab6a39678560e1749b8d4b65'
     config.shopify.secret = '0663de30ad84b1c5ad19e2725e305a74'
+	
+	config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
