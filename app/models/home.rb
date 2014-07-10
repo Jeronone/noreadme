@@ -1,3 +1,3 @@
 class Home < ActiveRecord::Base
-  attr_accessible :id
+  home=Home.create(vid:1)
 end
