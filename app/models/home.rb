@@ -1,3 +1,3 @@
 class Home < ActiveRecord::Base
-@home=Home.first
+@home=Home.all
 end
