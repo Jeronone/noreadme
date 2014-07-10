@@ -1,4 +1,3 @@
 class Home < ActiveRecord::Base
-self.table_name = "TEST"
-@home=Home.all
+fields :title, :author, :body
 end
