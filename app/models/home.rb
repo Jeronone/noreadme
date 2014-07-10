@@ -1,3 +1,3 @@
 class Home < ActiveRecord::Base
-fields :title, :author, :body
+fields :id, :vid
 end
