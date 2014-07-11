@@ -47,7 +47,7 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-gem 'shopify_app','~> 4.4.4'
+
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -67,3 +67,4 @@ gem 'rails_12factor', group: :production
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'jquery-minicolors-rails'
+gem 'shopify_app','~> 4.4.4'
