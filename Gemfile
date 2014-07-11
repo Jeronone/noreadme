@@ -63,7 +63,3 @@ gem "less-rails-bootstrap"
 end
 
 gem 'rails_12factor', group: :production
-
-gem 'carrierwave'
-gem 'cloudinary'
-gem 'jquery-minicolors-rails'
