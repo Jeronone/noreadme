@@ -61,5 +61,8 @@ end
 group :development, :test do
 gem "less-rails-bootstrap"
 end
-
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'jquery-minicolors-rails'
 gem 'rails_12factor', group: :production
+
