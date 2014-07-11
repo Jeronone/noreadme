@@ -11,9 +11,6 @@ gem 'pg'
 end
 group :production do
 gem 'therubyracer'
-
-gem 'cloudinary'
-gem 'jquery-minicolors-rails'
 end
 
 # Use SCSS for stylesheets
@@ -67,3 +64,6 @@ end
 
 gem 'rails_12factor', group: :production
 
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'jquery-minicolors-rails'
