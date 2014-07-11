@@ -11,7 +11,7 @@ gem 'pg'
 end
 group :production do
 gem 'therubyracer'
-gem 'carrierwave'
+
 gem 'cloudinary'
 gem 'jquery-minicolors-rails'
 end
