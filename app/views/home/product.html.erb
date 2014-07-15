@@ -272,8 +272,9 @@ $(this).remove();
 
 
 <%= form_tag("/search", method: "get",  class: "directUpload" ) do %>
-	
+	<%= @s3_direct_post.url %>
 <div class="field">
+
 	<%= file_field(:product, :avatar) %>
 	<%= submit_tag("Save") %>
 	</div>
