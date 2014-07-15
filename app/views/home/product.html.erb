@@ -271,13 +271,11 @@ $(this).remove();
 
 
 
-<%= form_tag(method: "post",  class: "directUpload" ) do %>
-	<%= @s3_direct_post.url %>
+<%= form_for(@product) do |f| %>
 <div class="field">
-
-	<%= file_field(:product, :avatar) %>
-	<%= submit_tag("Save") %>
-	</div>
+  <%= f.label :avatar_url %><br>
+  <%= f.file_field :avatar_url %>
+</div>
 <% end %>
 <script type="text/javascript">
   $('.directUpload').find("input:file").each(function(i, elem) {
