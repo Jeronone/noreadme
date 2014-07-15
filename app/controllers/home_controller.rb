@@ -103,7 +103,7 @@ Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:ke
       @product = ShopifyAPI::Product.find(session[:product_id])
 	  @metafields=ShopifyAPI::Metafield.find(:all,:params=>{:resource => "shop",:key => "jt_swatch_show"})
 	end
-	@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/${filename}", success_action_status: 201, acl: :public_read)	
+	 @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)	
   end
   
 	def destroy
