@@ -301,8 +301,9 @@ $(this).remove();
         progressBar.css('width', progress + '%')
       },
       start: function (e) {
+	  console.log("started");
         submitButton.prop('disabled', true);
-        progressBar.css('background', 'green').css('display','block').css('width', '0%').text("Loading...");
+        progressBar.css('background','green').css('display','block').css('width', '0%').text("Loading...");
       },
       done: function(e, data) {
         submitButton.prop('disabled', false);
