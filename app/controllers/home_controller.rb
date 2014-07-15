@@ -173,4 +173,9 @@ Base64.encode64(uploaded_image.read), :filename =>@oidf+".png",:metafield =>{:ke
 
 	end
 	end
+	
+	# new aws controller
+	def awsc
+		@s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/${filename}", success_action_status: 201, acl: :public_read)	
+	end
   end
