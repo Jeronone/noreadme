@@ -272,7 +272,7 @@ $(this).remove();
 
 
 <%= form_tag("/search", method: "get") do %>`
-	<%= file_field :avatar_url %>
+	<%= file_field(:product, :avatar) %>
 	<%= submit_tag("Save") %>
 <% end %>
 <script type="text/javascript">
