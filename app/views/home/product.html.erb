@@ -271,8 +271,8 @@ $(this).remove();
 
 
 
-<%= form_tag("/color",method: "get") do |f| %>
-	<%= f.file_field :avatar_url %>
+<%= form_tag("/search", method: "get") do %>`
+	<%= file_field :avatar_url %>
 	<%= submit_tag("Save") %>
 <% end %>
 <script type="text/javascript">
