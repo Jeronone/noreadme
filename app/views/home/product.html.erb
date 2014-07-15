@@ -271,7 +271,7 @@ $(this).remove();
 
 
 
-<%= form_tag("/product", method: "get", class:"directUpload") do %>
+<%= form_tag("/product", method: "post", class:"directUpload") do %>
 <div class="field">
   <%= label :product,:avatar_url %><br>
   <%= file_field :product,:avatar_url %>
