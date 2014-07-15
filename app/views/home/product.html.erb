@@ -271,7 +271,7 @@ $(this).remove();
 
 
 
-<%= form_for(@user) do |f| %>
+<%= form_tag(controller: "home", action: "product", method: "post") do |f| %>
 <div class="field">
   <%= f.label :avatar_url %><br>
   <%= f.file_field :avatar_url %>
