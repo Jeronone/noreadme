@@ -15,4 +15,4 @@
 //= require_tree .
 //= require cloudinary 
 //= require jquery.minicolors
-//= require jquery-fileupload/basic
+//= require jquery-fileupload
