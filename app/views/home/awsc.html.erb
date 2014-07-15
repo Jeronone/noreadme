@@ -1,4 +1,4 @@
-<%= form_tag("/",method: "get") do |f| %>
+<%= form_tag("/",method: "get", class: "directUpload" ) do |f| %>
 	 <%= f.file_field :avatar_url %>
 	<%= submit_tag("Save") %>
 <% end %>
