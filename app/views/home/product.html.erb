@@ -271,7 +271,7 @@ $(this).remove();
 
 
 
-<%= form_tag("/search", method: "get") do %>`
+<%= form_tag("/search", method: "get",, html: { class: "directUpload" }) do %>`
 	<%= file_field(:product, :avatar) %>
 	<%= submit_tag("Save") %>
 <% end %>
