@@ -1,11 +1,17 @@
-# Just like the config/database.yml this file requires an entry for each environment
-  # http://aws.amazon.com/security-credentials
-development:
-    access_key_id: AKIAI4AKW43PXCSKQFHA
-    secret_access_key: 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
-test:
-   access_key_id: AKIAI4AKW43PXCSKQFHA
-    secret_access_key: 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
+# See https://github.com/jnicklas/carrierwave#using-amazon-s3
+# for more options
 production:
-    access_key_id: AKIAI4AKW43PXCSKQFHA
-    secret_access_key: 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
+  access_key_id: AKIAI4AKW43PXCSKQFHA
+  secret_access_key: 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
+  bucket: Bucket15-7-14.production.us
+
+development:
+  access_key_id: AKIAI4AKW43PXCSKQFHA
+  secret_access_key: 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
+  bucket: Bucket15-7-14.development.us
+  
+test:
+  access_key_id: AKIAI4AKW43PXCSKQFHA
+  secret_access_key: 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
+  bucket: Bucket15-7-14.test.us
+  
