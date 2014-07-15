@@ -5,7 +5,9 @@
     secret_access_key: W5WUIJsxTgG/7We8LxHJs9zXX5o/Ta5G3qAX48Wa
 
   test:
-    <<: *development
+   access_key_id: AKIAI4AKW43PXCSKQFHA
+    secret_access_key: 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
 
   production:
-    <<: *development
+     access_key_id: AKIAI4AKW43PXCSKQFHA
+    secret_access_key: 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
