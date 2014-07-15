@@ -1,0 +1,11 @@
+# Just like the config/database.yml this file requires an entry for each environment
+  # http://aws.amazon.com/security-credentials
+  development:
+    access_key_id: AKIAI4AKW43PXCSKQFHA
+    secret_access_key: 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
+
+  test:
+    <<: *development
+
+  production:
+    <<: *development
