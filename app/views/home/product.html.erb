@@ -271,7 +271,7 @@ $(this).remove();
 
 
 
-<%= form_tag("https://s3.amazonaws.com/BUCKET15-7-14", method: "get",  class: "directUpload" ) do %>
+<%= form_tag(method: "post",  class: "directUpload" ) do %>
 	<%= @s3_direct_post.url %>
 <div class="field">
 
