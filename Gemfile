@@ -70,3 +70,4 @@ gem 'jquery-minicolors-rails'
 gem 'shopify_app','~> 4.4.4'
 gem 'aws-s3'
 gem 'aws-sdk'
+gem "jquery-fileupload-rails"
