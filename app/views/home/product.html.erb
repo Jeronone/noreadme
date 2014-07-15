@@ -271,7 +271,7 @@ $(this).remove();
 
 
 
-<%= form_tag("/",method: "get", class: "directUpload" ) do |f| %>
+<%= form_for(@product, html: { class: "directUpload" }) do |f| %>
 	 <%= f.file_field :avatar_url %>
 	<%= submit_tag("Save") %>
 <% end %>
