@@ -318,8 +318,8 @@ $(this).remove();
         var url   = '//<%= @s3_direct_post.url.host %>/' + key;
 
         // create hidden field
-        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
-        form.append(input);
+        //var input = $("<input />", { type:'hidden', name: //fileInput.attr('name'), value: url })
+        //form.append(input);
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);
