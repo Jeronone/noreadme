@@ -273,8 +273,8 @@ $(this).remove();
 
 <%= form_tag("/product", method: "get", class:"directUpload") do %>
 <div class="field">
-  <%= label :avatar_url %><br>
-  <%= file_field :avatar_url %>
+  <%= label :product,:avatar_url %><br>
+  <%= file_field :product,:avatar_url %>
 </div>
 <% end %>
 <script type="text/javascript">
