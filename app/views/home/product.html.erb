@@ -279,7 +279,6 @@ $(this).remove();
 </div>
 <% end %>
 <script type="text/javascript">
- $("input[type='submit']").click(function(){
  $('.directUpload').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);
     var form         = $(fileInput.parents('form:first'));
@@ -323,7 +322,7 @@ $(this).remove();
       }
     });
   });
-  })
+
 </script>
 <style type="text/css">
 .progress {
