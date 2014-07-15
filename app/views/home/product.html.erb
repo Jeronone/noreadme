@@ -271,7 +271,7 @@ $(this).remove();
 
 
 
-<%= form_tag(controller: "home", action: "product", method: "post")  %>
+<%= form_tag(controller: "home", action: "product", method: "post") do %>
 <div class="field">
   <%= label :avatar_url %><br>
   <%= file_field :avatar_url %>
