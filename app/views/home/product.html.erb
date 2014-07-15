@@ -271,10 +271,10 @@ $(this).remove();
 
 
 
-<%= form_tag(controller: "home", action: "product", method: "post") do |f| %>
+<%= form_tag(controller: "home", action: "product", method: "post")  %>
 <div class="field">
-  <%= f.label :avatar_url %><br>
-  <%= f.file_field :avatar_url %>
+  <%= label :avatar_url %><br>
+  <%= file_field :avatar_url %>
 </div>
 <% end %>
 <script type="text/javascript">
