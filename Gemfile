@@ -71,3 +71,4 @@ gem 'shopify_app','~> 4.4.4'
 gem 'aws-s3'
 gem 'aws-sdk'
 gem "paperclip"
+gem 'aws_imageshack'
