@@ -3,15 +3,15 @@
 production:
   access_key_id: AKIAI4AKW43PXCSKQFHA
   secret_access_key: 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
-  bucket: BUCKET15-7-14.production.us
+  bucket: Bucket15-7-14.production.us
 
 development:
   access_key_id: AKIAI4AKW43PXCSKQFHA
   secret_access_key: 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
-  bucket: BUCKET15-7-14.development.us
+  bucket: Bucket15-7-14.development.us
   
 test:
   access_key_id: AKIAI4AKW43PXCSKQFHA
   secret_access_key: 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
-  bucket: BUCKET15-7-14.test.us
+  bucket: Bucket15-7-14.test.us
   
