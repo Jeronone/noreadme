@@ -68,7 +68,7 @@ class HomeController < ApplicationController
 	 
 	 # @arr = @product.images
 	 
-	 # puts YAML::dump(variantid)
+	 # puts YAML::dump(variantid)  
 	 # puts YAML::dump(varianttitle)
 	  #if(@product)
 	   #uploaded_image = params[:product][:product_image]
