@@ -59,7 +59,6 @@ class HomeController < ApplicationController
 			@case="case23"
 			end
 		 end
-		 
 	   end
 
 	  
